@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Your awesome title</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>https://gunhanb.github.io/blog//</link>
+    <atom:link href="https://gunhanb.github.io/blog//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 29 Oct 2016 23:22:09 +0200</pubDate>
+    <lastBuildDate>Sat, 29 Oct 2016 23:22:09 +0200</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Nasil reproducible research yaparim</title>
+        <description>&lt;p&gt;Diyelim ki bir arkadasiniz yaklasik bir sene once tamamlamis oldugunuz bir &lt;em&gt;research&lt;/em&gt; calismanizdan birsey sordu. Calismaniza donup analizleri tekrar gozden gecirmek, tablo ve figurlerin 
+&lt;em&gt;reproduce&lt;/em&gt; edebilmeniz ne kadar vaktinizi alacaktir? Veya arkadasinizi bosverin, sadece kendiniz 2 sene once hazirlamis oldugunuz sunumdaki &lt;em&gt;result&lt;/em&gt;larin tekrar elde etmeye calissaniz? Bu sureyi ve olasi zahmeti azaltmanin (ve daha fazlasi) metodu &lt;em&gt;reproducible research&lt;/em&gt; yapmaniz!&lt;/p&gt;
+
+&lt;p&gt;Eger gunluk hayattaki calismalarinizda bir sekilde &lt;em&gt;data analysis&lt;/em&gt; yapiyorsaniz, eski yontemler yerine &lt;em&gt;reproducible research&lt;/em&gt; kullanmaniz belki biraz daha zahmetli ama uzun vadede kesinlikle daha faydali.&lt;/p&gt;
+
+&lt;p&gt;Bir baska acidan bakacak olursak, geleneksel rapor yaziminda, sonuclari bir software de hesaplayip, sonra da hesaplamis oldugumuz sayilari elle sonuc bolumune yazariz. Ama bu yontem reproducible degil, data &lt;em&gt;software&lt;/em&gt; e bagli fakat sonuclar yazdigimiz metine bagli degil, dolayisiyla hata yapma ihtimali bayagi yuksek.&lt;/p&gt;
+
+&lt;p&gt;Bu konu tabiiki bayagi genis ve kapsamli, ayrica niyetim bir &lt;em&gt;manual&lt;/em&gt; yazmak degil. Bu yazida amacim kendi tecrubelerimden faydalanarak tamamen pratik acidan reproducible research’u kisaca anlatmaya calismak (&lt;a href=&quot;http://reproducibleresearch.net&quot;&gt;daha ayrintili bilgi icin tiklayin&lt;/a&gt;). Turkce yazmamin amaci da bu konulardaki Turkce materyallerin eksigligi.&lt;/p&gt;
+
+&lt;p&gt;Ilk olarak data analysis’i hangi &lt;em&gt;software&lt;/em&gt; de yapacagim sorusu karsimiza geliyor. Bir istatistikci oldugum icin buna verecegim cevap tabiki &lt;strong&gt;R&lt;/strong&gt; (since &lt;strong&gt;R&lt;/strong&gt; is made by statisticians for statisticians!). Ikinci olarak &lt;em&gt;typesetting&lt;/em&gt; programimizi belirlememiz gerekiyor, raporu/makaleyi/tezi yazacagimiz veya sunumu hazirlayacagimiz program. Buna cevabimiz ise LaTeX oluyor. Ve ucuncu olarak bize uygun bir &lt;em&gt;text editor&lt;/em&gt; gerekli, bunun icin de &lt;strong&gt;Rstudio&lt;/strong&gt; yu kullaniyoruz. Sonunda sihirli dokunusu yapacak yani reproducible research u mumkun kilacak olan program (aslinda bir &lt;strong&gt;R&lt;/strong&gt; &lt;em&gt;package&lt;/em&gt;): &lt;strong&gt;knitr&lt;/strong&gt;. Tam burada &lt;strong&gt;knitr&lt;/strong&gt; in babasi olan programi hatirlatmam gerekiyor, saygi geregi &lt;strong&gt;Sweave&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Dolayisiyla &lt;strong&gt;knitr&lt;/strong&gt; ile birlikte bu uc program, &lt;strong&gt;R&lt;/strong&gt; + Markdown + &lt;strong&gt;Rstudio&lt;/strong&gt;, bize reproducible research yapabilmemiz icin yeterli ve bu arada hepsi de free software. Kisacasi bir tek &lt;em&gt;document&lt;/em&gt; a hem LaTeX kodu hem de &lt;strong&gt;R&lt;/strong&gt; kodunu yaziyorsunuz (.Rnw file) ve sonrasinda &lt;em&gt;compile&lt;/em&gt; edip PDF inize kavusmus oluyorsunuz. Aslina bakarsaniz, &lt;strong&gt;knitr&lt;/strong&gt; kullanarak reproducible research yapabilmemiz icin bu uc programin hicbiri farz degil, alternatif kombinasyonlara en sonda deginecegim. Rstudio nun sagladigi en onemli fayda ise &lt;em&gt;compile to PDF&lt;/em&gt; adimini sadece tek bir tusa indirgiyor olusu.&lt;/p&gt;
+
+&lt;h2 id=&quot;basit-bir-ornek&quot;&gt;Basit bir ornek&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Base R&lt;/em&gt; dan &lt;em&gt;cars&lt;/em&gt; adli &lt;em&gt;dataset&lt;/em&gt; i kullanacagiz. Bu dataset farkli arabalarin hizlari (&lt;em&gt;speed variable&lt;/em&gt;) ve her bir arabanin durmak icin gerekli mesafelerini (&lt;em&gt;dist variable&lt;/em&gt;) iceriyor. Bu datayi analiz etmek icin &lt;em&gt;linear regression&lt;/em&gt; kullaniyoruz ve gerekli &lt;strong&gt;R&lt;/strong&gt; kodu asagidaki gibi gosterebiliriz.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;regression&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Tabii sonuclari -mesela bu ornekte &lt;em&gt;coefficients&lt;/em&gt;- bir tabloda gostermek isteyebiliriz. Bunun icin de &lt;strong&gt;xtable&lt;/strong&gt; (bir &lt;strong&gt;R&lt;/strong&gt; package) bize yardimci olacak. Asagidaki &lt;strong&gt;R&lt;/strong&gt; kodu bize gerekli HTML kodu veriyor, ve compile ettikten sonra da Tablo 1’i elde ediyoruz.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;knitr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coefs&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rownames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coefs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Intercept&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;speed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coefs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tab:coefs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digits&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row.names&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col.names&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Estimate&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Estimate&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Intercept&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-17.58&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;speed&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3.93&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Normal sartlarda tabloyu yaratan &lt;strong&gt;R&lt;/strong&gt; kodu okuyucuya gostermeye gerek yok fakat ben ornek olmasi acisindan gosteriyorum.&lt;/p&gt;
+
+&lt;p&gt;Simdi ise &lt;em&gt;data visualization&lt;/em&gt;. Asagidaki &lt;strong&gt;R&lt;/strong&gt; kod ile Figure 1’i elde ediyoruz.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ggplot2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ggplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom_abline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intercept&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;slope&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-10-27-test/figure-1.png&quot; alt=&quot;plot of chunk figure&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bu ornekte damaginiza &lt;strong&gt;knitr&lt;/strong&gt; kullanimindan bir tat calmayi amacladim. Ozetleyecek olursak, guzel tablomuzu &lt;strong&gt;xtable&lt;/strong&gt; sayesinde ve guzel figurumuzu de &lt;strong&gt;ggplot2&lt;/strong&gt; sayesinde yaptik.&lt;/p&gt;
+
+&lt;p&gt;Benim ugrastigim problemlerde &lt;strong&gt;knitr&lt;/strong&gt; in saglamis oldugu cok onemli diger bir fayda ise &lt;em&gt;cache&lt;/em&gt; ozelligi. Simdi farz edin ki analiziniz yukaridaki gibi bir simple linear regression degil, mesela simulasyon yapiyorsunuz veya &lt;em&gt;bootstrapping&lt;/em&gt;. Dolayisiyla islem saatler surebilir. Bu durumda &lt;strong&gt;knitr&lt;/strong&gt; in cache ozelligini kullanabilirsiniz, ilk compilation da analiz yapilir (artik ne kadar suruyorsa) ve &lt;strong&gt;knitr&lt;/strong&gt; sizin icin outputu kaydeder. Sonraki compilationlarda ise knitr kaydedilmis outputu kullanir!&lt;/p&gt;
+
+&lt;p&gt;Bu arada &lt;strong&gt;knitr&lt;/strong&gt;‘i her turlu farkli LaTeX &lt;em&gt;documentclass&lt;/em&gt; icin kullanabilirsiniz, mesela rapor yazarken veya sunumunuzu hazirlarken. Diyelim ki sunumunuzdaki bir analizde kucuk bir degisiklik yapmak istiyorsunuz, artik cok kolay ve pratik bir sekilde bunu yapabilirsiniz.&lt;/p&gt;
+
+&lt;h2 id=&quot;kapanis&quot;&gt;Kapanis&lt;/h2&gt;
+
+&lt;p&gt;Daha once soyledigim gibi &lt;strong&gt;knitr&lt;/strong&gt; bayagi flexible. Mesela LaTeX kullanmak istemiyorsaniz, &lt;strong&gt;R&lt;/strong&gt; + &lt;strong&gt;Markdown&lt;/strong&gt; + &lt;strong&gt;Rstudio&lt;/strong&gt; da gayet guzel bir alternatif sizin icin. Boylece HTML ve ya Word output da elde edebilirsiniz, PDF in yaninda (ozellikle  LaTeX bilmiyorsaniz). Veyahut &lt;strong&gt;R&lt;/strong&gt; yerine &lt;strong&gt;Phyton&lt;/strong&gt;, &lt;strong&gt;SAS&lt;/strong&gt;, &lt;strong&gt;Ruby&lt;/strong&gt; kullanabilirsiniz, &lt;strong&gt;Rstudio&lt;/strong&gt; yerine &lt;strong&gt;LyX&lt;/strong&gt;, &lt;strong&gt;Texmaker&lt;/strong&gt; veya &lt;strong&gt;Emacs&lt;/strong&gt; kullanabilirsiniz. Fakat bence &lt;strong&gt;Rstudio&lt;/strong&gt; dan sasmamak en mantiklisi cunku Rstudio knitr icin &lt;em&gt;build-in support&lt;/em&gt; a sahip. Muhtemelen bunun onemli bir nedeni &lt;strong&gt;knitr&lt;/strong&gt; in yaraticisinin bir &lt;strong&gt;Rstudio&lt;/strong&gt; calisani olmasi. Hepsi ve daha fazlasi icin &lt;a href=&quot;http://yihui.name/knitr/&quot;&gt;&lt;strong&gt;knitr&lt;/strong&gt; in websitesine bakabilirsiniz&lt;/a&gt;. Son olarak, bu yazinin kendisi de &lt;strong&gt;knitr&lt;/strong&gt; kullanarak reproducible researche bir ornek, source code u yazardan taleb edebilirsiniz.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 27 Oct 2016 00:00:00 +0200</pubDate>
+        <link>https://gunhanb.github.io/blog//2016/10/test.html</link>
+        <guid isPermaLink="true">https://gunhanb.github.io/blog//2016/10/test.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
