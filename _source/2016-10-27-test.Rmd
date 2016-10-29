@@ -41,15 +41,13 @@ Tabii sonuclari -mesela bu ornekte *coefficients*- bir tabloda gostermek isteyeb
 
 
 ```{r table, results="asis"}
-library(xtable)
+library(knitr)
 coefs <- matrix(coef(fit))
 rownames(coefs) <- c("Intercept", "speed")
-print(xtable(coefs, label = "tab:coefs",
-             digits = 2),
-      type = "html",       
-      booktabs = TRUE,
-      include.rownames = TRUE, 
-      include.colnames = FALSE)
+kable(coefs, label = "tab:coefs",
+      digits = 2,
+      row.names = TRUE, 
+      col.names = "Estimate")
 ```
 
 
