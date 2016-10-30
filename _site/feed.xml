@@ -6,9 +6,20 @@
 </description>
     <link>https://gunhanb.github.io/blog//blog//</link>
     <atom:link href="https://gunhanb.github.io/blog//blog//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 30 Oct 2016 21:03:48 +0100</pubDate>
-    <lastBuildDate>Sun, 30 Oct 2016 21:03:48 +0100</lastBuildDate>
+    <pubDate>Sun, 30 Oct 2016 21:34:42 +0100</pubDate>
+    <lastBuildDate>Sun, 30 Oct 2016 21:34:42 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>How I got here?</title>
+        <description>&lt;p&gt;In short, thanks to Yihuie Xie.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 27 Oct 2016 00:00:00 +0200</pubDate>
+        <link>https://gunhanb.github.io/blog//blog//2016/10/first.html</link>
+        <guid isPermaLink="true">https://gunhanb.github.io/blog//blog//2016/10/first.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Nasil reproducible research yaparim</title>
@@ -68,7 +79,7 @@
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ggplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
     &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom_abline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intercept&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;slope&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-10-27-test/figure-1.png&quot; alt=&quot;plot of chunk figure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-10-26-test/figure-1.png&quot; alt=&quot;plot of chunk figure&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Bu ornekte damaginiza &lt;strong&gt;knitr&lt;/strong&gt; kullanimindan bir tat calmayi amacladim. Ozetleyecek olursak, guzel tablomuzu &lt;strong&gt;xtable&lt;/strong&gt; sayesinde ve guzel figurumuzu de &lt;strong&gt;ggplot2&lt;/strong&gt; sayesinde yaptik.&lt;/p&gt;
 
@@ -81,7 +92,7 @@
 &lt;p&gt;Daha once soyledigim gibi &lt;strong&gt;knitr&lt;/strong&gt; bayagi flexible. Mesela LaTeX kullanmak istemiyorsaniz, &lt;strong&gt;R&lt;/strong&gt; + &lt;strong&gt;Markdown&lt;/strong&gt; + &lt;strong&gt;Rstudio&lt;/strong&gt; da gayet guzel bir alternatif sizin icin. Boylece HTML ve ya Word output da elde edebilirsiniz, PDF in yaninda (ozellikle  LaTeX bilmiyorsaniz). Veyahut &lt;strong&gt;R&lt;/strong&gt; yerine &lt;strong&gt;Phyton&lt;/strong&gt;, &lt;strong&gt;SAS&lt;/strong&gt;, &lt;strong&gt;Ruby&lt;/strong&gt; kullanabilirsiniz, &lt;strong&gt;Rstudio&lt;/strong&gt; yerine &lt;strong&gt;LyX&lt;/strong&gt;, &lt;strong&gt;Texmaker&lt;/strong&gt; veya &lt;strong&gt;Emacs&lt;/strong&gt; kullanabilirsiniz. Fakat bence &lt;strong&gt;Rstudio&lt;/strong&gt; dan sasmamak en mantiklisi cunku Rstudio knitr icin &lt;em&gt;build-in support&lt;/em&gt; a sahip. Muhtemelen bunun onemli bir nedeni &lt;strong&gt;knitr&lt;/strong&gt; in yaraticisinin bir &lt;strong&gt;Rstudio&lt;/strong&gt; calisani olmasi. Hepsi ve daha fazlasi icin &lt;a href=&quot;http://yihui.name/knitr/&quot;&gt;&lt;strong&gt;knitr&lt;/strong&gt; in websitesine bakabilirsiniz&lt;/a&gt;. Son olarak, bu yazinin kendisi de &lt;strong&gt;knitr&lt;/strong&gt; kullanarak reproducible researche bir ornek, source code u yazardan taleb edebilirsiniz.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 27 Oct 2016 00:00:00 +0200</pubDate>
+        <pubDate>Wed, 26 Oct 2016 00:00:00 +0200</pubDate>
         <link>https://gunhanb.github.io/blog//blog//2016/10/test.html</link>
         <guid isPermaLink="true">https://gunhanb.github.io/blog//blog//2016/10/test.html</guid>
         
