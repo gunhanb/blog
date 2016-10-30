@@ -1,5 +1,6 @@
 # Site settings
 title: Just another personal blog
+email: burakgunhan@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
  Under development
 baseurl: "/blog/" # the subpath of your site, e.g. /blog/
