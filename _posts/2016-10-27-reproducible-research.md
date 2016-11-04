@@ -1,15 +1,12 @@
 ---
 layout: post
-title: Nasil reproducible research yaparim
+title: Nasil reproducible research yaparim?
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 
-Diyelim ki bir arkadasiniz yaklasik bir sene once tamamlamis oldugunuz bir *research* calismanizdan birsey sordu. Calismaniza donup analizleri tekrar gozden gecirmek, tablo ve figurlerin 
-*reproduce* edebilmeniz ne kadar vaktinizi alacaktir? Veya arkadasinizi bosverin, sadece kendiniz 2 sene once hazirlamis oldugunuz sunumdaki *result*larin tekrar elde etmeye calissaniz? Bu sureyi ve olasi zahmeti azaltmanin (ve daha fazlasi) metodu *reproducible research* yapmaniz!
+
+Diyelim ki bir arkadasiniz yaklasik bir sene once tamamlamis oldugunuz bir *research* calismanizdan birsey sordu. Calismaniza donup analizleri tekrar gozden gecirmek, tablo ve figurlerin *reproduce* edebilmeniz ne kadar vaktinizi alacaktir? Veya arkadasinizi bosverin, sadece kendiniz 2 sene once hazirlamis oldugunuz sunumdaki *result*larin tekrar elde etmeye calissaniz? Bu sureyi ve olasi zahmeti azaltmanin (ve daha fazlasi) metodu *reproducible research* yapmaniz!
 
 
 Eger gunluk hayattaki calismalarinizda bir sekilde *data analysis* yapiyorsaniz, eski yontemler yerine *reproducible research* kullanmaniz belki biraz daha zahmetli ama uzun vadede kesinlikle daha faydali. 
@@ -21,26 +18,28 @@ Bir baska acidan bakacak olursak, geleneksel rapor yaziminda, sonuclari bir soft
 Bu konu tabiiki bayagi genis ve kapsamli, ayrica niyetim bir *manual* yazmak degil. Bu yazida amacim kendi tecrubelerimden faydalanarak tamamen pratik acidan reproducible research'u kisaca anlatmaya calismak ([daha ayrintili bilgi icin tiklayin](http://reproducibleresearch.net)). Turkce yazmamin amaci da bu konulardaki Turkce materyallerin eksigligi. 
 
 
-Ilk olarak data analysis'i hangi *software* de yapacagim sorusu karsimiza geliyor. Bir istatistikci oldugum icin buna verecegim cevap tabiki **R** (since **R** is made by statisticians for statisticians!). Ikinci olarak *typesetting* programimizi belirlememiz gerekiyor, raporu/makaleyi/tezi yazacagimiz veya sunumu hazirlayacagimiz program. Buna cevabimiz ise LaTeX oluyor. Ve ucuncu olarak bize uygun bir *text editor* gerekli, bunun icin de **Rstudio** yu kullaniyoruz. Sonunda sihirli dokunusu yapacak yani reproducible research u mumkun kilacak olan program (aslinda bir **R** *package*): **knitr**. Tam burada **knitr** in babasi olan programi hatirlatmam gerekiyor, saygi geregi **Sweave**. 
+Ilk olarak data analysis'i hangi *software* de yapacagim sorusu karsimiza geliyor. Bir istatistikci oldugum icin buna verecegim cevap tabiki [**R**](https://www.r-project.org) (since **R** is made by statisticians for statisticians!). Ikinci olarak *typesetting* programimizi belirlememiz gerekiyor, raporu/makaleyi/tezi yazacagimiz veya sunumu hazirlayacagimiz program. Buna cevabimiz ise *LaTeX* olabilir. Fakat diger guclu bir alternatif ise [*Markdown*](https://daringfireball.net/projects/markdown/). Markdown ile hem pdf, word veya HTML output elde edebiliyoruz. Ve ucuncu olarak bize uygun bir *text editor* gerekli, bunun icin de **Rstudio** yu kullaniyoruz. Sonunda sihirli dokunusu yapacak yani reproducible research u mumkun kilacak olan program (aslinda bir **R** *package*): **knitr**. Tam burada **knitr** in babasi olan programi hatirlatmam gerekiyor, saygi geregi **Sweave**. 
 
 
-Dolayisiyla **knitr** ile birlikte bu uc program, **R** + Markdown + **Rstudio**, bize reproducible research yapabilmemiz icin yeterli ve bu arada hepsi de free software. Kisacasi bir tek *document* a hem LaTeX kodu hem de **R** kodunu yaziyorsunuz (.Rnw file) ve sonrasinda *compile* edip PDF inize kavusmus oluyorsunuz. Aslina bakarsaniz, **knitr** kullanarak reproducible research yapabilmemiz icin bu uc programin hicbiri farz degil, alternatif kombinasyonlara en sonda deginecegim. Rstudio nun sagladigi en onemli fayda ise *compile to PDF* adimini sadece tek bir tusa indirgiyor olusu.
+Dolayisiyla **knitr** ile birlikte bu uc program, **R** + Markdown + **Rstudio**, bize reproducible research yapabilmemiz icin yeterli ve bu arada hepsi de free software. Kisacasi bir tek *document* a hem LaTeX kodu hem de **R** kodunu yaziyorsunuz (.Rmd file) ve sonrasinda *compile* edip PDF inize kavusmus oluyorsunuz. Aslina bakarsaniz, **knitr** kullanarak reproducible research yapabilmemiz icin bu uc programin hicbiri farz degil, alternatif kombinasyonlara en sonda deginecegim. Rstudio nun sagladigi en onemli fayda ise *compile to PDF* adimini sadece tek bir tusa indirgiyor olusu.
 
 ## Basit bir ornek
 
 *Base R* dan *cars* adli *dataset* i kullanacagiz. Bu dataset farkli arabalarin hizlari (*speed variable*) ve her bir arabanin durmak icin gerekli mesafelerini (*dist variable*) iceriyor. Bu datayi analiz etmek icin *linear regression* kullaniyoruz ve gerekli **R** kodu asagidaki gibi gosterebiliriz.
 
 
-```{r cars}
+
+{% highlight r %}
 fit <- lm(dist ~ speed, data = cars) # linear regression 
-```
+{% endhighlight %}
 
 
 Tabii sonuclari -mesela bu ornekte *coefficients*- bir tabloda gostermek isteyebiliriz. Bunun icin de **xtable** (bir **R** package) bize yardimci olacak. Asagidaki **R** kodu bize gerekli HTML kodu veriyor, ve compile ettikten sonra da Tablo 1'i elde ediyoruz.
 
 
 
-```{r table, results="asis"}
+
+{% highlight r %}
 library(knitr)
 coefs <- matrix(coef(fit))
 rownames(coefs) <- c("Intercept", "speed")
@@ -48,7 +47,14 @@ kable(coefs, label = "tab:coefs",
       digits = 2,
       row.names = TRUE, 
       col.names = "Estimate")
-```
+{% endhighlight %}
+
+
+
+|          | Estimate|
+|:---------|--------:|
+|Intercept |   -17.58|
+|speed     |     3.93|
 
 
 
@@ -56,13 +62,16 @@ Normal sartlarda tabloyu yaratan **R** kodu okuyucuya gostermeye gerek yok fakat
 
 Simdi ise *data visualization*. Asagidaki **R** kod ile Figure 1'i elde ediyoruz.
 
-```{r figure, echo=TRUE, fig.width=4, fig.height=3, tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=50)}
-library(ggplot2)
-ggplot(cars, aes(x = speed, y = dist)) + geom_point() +
-  geom_abline(intercept = coef(fit)[1], slope = coef(fit)[2])
-```
 
-Bu ornekte damaginiza **knitr** kullanimindan bir tat calmayi amacladim. Ozetleyecek olursak, guzel tablomuzu **xtable** sayesinde ve guzel figurumuzu de **ggplot2** sayesinde yaptik. 
+{% highlight r %}
+library(ggplot2)
+ggplot(cars, aes(x = speed, y = dist)) + geom_point() + 
+    geom_abline(intercept = coef(fit)[1], slope = coef(fit)[2])
+{% endhighlight %}
+
+![plot of chunk figure](/blog/figure/source/2016-10-27-reproducible-research/figure-1.png)
+
+Bu ornekte damaginiza **knitr** kullanimindan bir tat calmayi amacladim.  
 
 Benim ugrastigim problemlerde **knitr** in saglamis oldugu cok onemli diger bir fayda ise *cache* ozelligi. Simdi farz edin ki analiziniz yukaridaki gibi bir simple linear regression degil, mesela simulasyon yapiyorsunuz veya *bootstrapping*. Dolayisiyla islem saatler surebilir. Bu durumda **knitr** in cache ozelligini kullanabilirsiniz, ilk compilation da analiz yapilir (artik ne kadar suruyorsa) ve **knitr** sizin icin outputu kaydeder. Sonraki compilationlarda ise knitr kaydedilmis outputu kullanir!
 

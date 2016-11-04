@@ -1,30 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Just another personal blog</title>
-    <description>Under development
+    <title>Burak&#39;s Personal Blog</title>
+    <description>This is just another blog about statistics, R and data science etc.
 </description>
     <link>https://gunhanb.github.io/blog//blog//</link>
     <atom:link href="https://gunhanb.github.io/blog//blog//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 30 Oct 2016 21:34:42 +0100</pubDate>
-    <lastBuildDate>Sun, 30 Oct 2016 21:34:42 +0100</lastBuildDate>
+    <pubDate>Fri, 04 Nov 2016 21:50:32 +0100</pubDate>
+    <lastBuildDate>Fri, 04 Nov 2016 21:50:32 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>How I got here?</title>
-        <description>&lt;p&gt;In short, thanks to Yihuie Xie.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 27 Oct 2016 00:00:00 +0200</pubDate>
-        <link>https://gunhanb.github.io/blog//blog//2016/10/first.html</link>
-        <guid isPermaLink="true">https://gunhanb.github.io/blog//blog//2016/10/first.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Nasil reproducible research yaparim</title>
-        <description>&lt;p&gt;Diyelim ki bir arkadasiniz yaklasik bir sene once tamamlamis oldugunuz bir &lt;em&gt;research&lt;/em&gt; calismanizdan birsey sordu. Calismaniza donup analizleri tekrar gozden gecirmek, tablo ve figurlerin 
-&lt;em&gt;reproduce&lt;/em&gt; edebilmeniz ne kadar vaktinizi alacaktir? Veya arkadasinizi bosverin, sadece kendiniz 2 sene once hazirlamis oldugunuz sunumdaki &lt;em&gt;result&lt;/em&gt;larin tekrar elde etmeye calissaniz? Bu sureyi ve olasi zahmeti azaltmanin (ve daha fazlasi) metodu &lt;em&gt;reproducible research&lt;/em&gt; yapmaniz!&lt;/p&gt;
+        <title>Nasil reproducible research yaparim?</title>
+        <description>&lt;p&gt;Diyelim ki bir arkadasiniz yaklasik bir sene once tamamlamis oldugunuz bir &lt;em&gt;research&lt;/em&gt; calismanizdan birsey sordu. Calismaniza donup analizleri tekrar gozden gecirmek, tablo ve figurlerin &lt;em&gt;reproduce&lt;/em&gt; edebilmeniz ne kadar vaktinizi alacaktir? Veya arkadasinizi bosverin, sadece kendiniz 2 sene once hazirlamis oldugunuz sunumdaki &lt;em&gt;result&lt;/em&gt;larin tekrar elde etmeye calissaniz? Bu sureyi ve olasi zahmeti azaltmanin (ve daha fazlasi) metodu &lt;em&gt;reproducible research&lt;/em&gt; yapmaniz!&lt;/p&gt;
 
 &lt;p&gt;Eger gunluk hayattaki calismalarinizda bir sekilde &lt;em&gt;data analysis&lt;/em&gt; yapiyorsaniz, eski yontemler yerine &lt;em&gt;reproducible research&lt;/em&gt; kullanmaniz belki biraz daha zahmetli ama uzun vadede kesinlikle daha faydali.&lt;/p&gt;
 
@@ -32,9 +20,9 @@
 
 &lt;p&gt;Bu konu tabiiki bayagi genis ve kapsamli, ayrica niyetim bir &lt;em&gt;manual&lt;/em&gt; yazmak degil. Bu yazida amacim kendi tecrubelerimden faydalanarak tamamen pratik acidan reproducible research’u kisaca anlatmaya calismak (&lt;a href=&quot;http://reproducibleresearch.net&quot;&gt;daha ayrintili bilgi icin tiklayin&lt;/a&gt;). Turkce yazmamin amaci da bu konulardaki Turkce materyallerin eksigligi.&lt;/p&gt;
 
-&lt;p&gt;Ilk olarak data analysis’i hangi &lt;em&gt;software&lt;/em&gt; de yapacagim sorusu karsimiza geliyor. Bir istatistikci oldugum icin buna verecegim cevap tabiki &lt;strong&gt;R&lt;/strong&gt; (since &lt;strong&gt;R&lt;/strong&gt; is made by statisticians for statisticians!). Ikinci olarak &lt;em&gt;typesetting&lt;/em&gt; programimizi belirlememiz gerekiyor, raporu/makaleyi/tezi yazacagimiz veya sunumu hazirlayacagimiz program. Buna cevabimiz ise LaTeX oluyor. Ve ucuncu olarak bize uygun bir &lt;em&gt;text editor&lt;/em&gt; gerekli, bunun icin de &lt;strong&gt;Rstudio&lt;/strong&gt; yu kullaniyoruz. Sonunda sihirli dokunusu yapacak yani reproducible research u mumkun kilacak olan program (aslinda bir &lt;strong&gt;R&lt;/strong&gt; &lt;em&gt;package&lt;/em&gt;): &lt;strong&gt;knitr&lt;/strong&gt;. Tam burada &lt;strong&gt;knitr&lt;/strong&gt; in babasi olan programi hatirlatmam gerekiyor, saygi geregi &lt;strong&gt;Sweave&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Ilk olarak data analysis’i hangi &lt;em&gt;software&lt;/em&gt; de yapacagim sorusu karsimiza geliyor. Bir istatistikci oldugum icin buna verecegim cevap tabiki &lt;a href=&quot;https://www.r-project.org&quot;&gt;&lt;strong&gt;R&lt;/strong&gt;&lt;/a&gt; (since &lt;strong&gt;R&lt;/strong&gt; is made by statisticians for statisticians!). Ikinci olarak &lt;em&gt;typesetting&lt;/em&gt; programimizi belirlememiz gerekiyor, raporu/makaleyi/tezi yazacagimiz veya sunumu hazirlayacagimiz program. Buna cevabimiz ise &lt;em&gt;LaTeX&lt;/em&gt; olabilir. Fakat diger guclu bir alternatif ise &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;&lt;em&gt;Markdown&lt;/em&gt;&lt;/a&gt;. Markdown ile hem pdf, word veya HTML output elde edebiliyoruz. Ve ucuncu olarak bize uygun bir &lt;em&gt;text editor&lt;/em&gt; gerekli, bunun icin de &lt;strong&gt;Rstudio&lt;/strong&gt; yu kullaniyoruz. Sonunda sihirli dokunusu yapacak yani reproducible research u mumkun kilacak olan program (aslinda bir &lt;strong&gt;R&lt;/strong&gt; &lt;em&gt;package&lt;/em&gt;): &lt;strong&gt;knitr&lt;/strong&gt;. Tam burada &lt;strong&gt;knitr&lt;/strong&gt; in babasi olan programi hatirlatmam gerekiyor, saygi geregi &lt;strong&gt;Sweave&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Dolayisiyla &lt;strong&gt;knitr&lt;/strong&gt; ile birlikte bu uc program, &lt;strong&gt;R&lt;/strong&gt; + Markdown + &lt;strong&gt;Rstudio&lt;/strong&gt;, bize reproducible research yapabilmemiz icin yeterli ve bu arada hepsi de free software. Kisacasi bir tek &lt;em&gt;document&lt;/em&gt; a hem LaTeX kodu hem de &lt;strong&gt;R&lt;/strong&gt; kodunu yaziyorsunuz (.Rnw file) ve sonrasinda &lt;em&gt;compile&lt;/em&gt; edip PDF inize kavusmus oluyorsunuz. Aslina bakarsaniz, &lt;strong&gt;knitr&lt;/strong&gt; kullanarak reproducible research yapabilmemiz icin bu uc programin hicbiri farz degil, alternatif kombinasyonlara en sonda deginecegim. Rstudio nun sagladigi en onemli fayda ise &lt;em&gt;compile to PDF&lt;/em&gt; adimini sadece tek bir tusa indirgiyor olusu.&lt;/p&gt;
+&lt;p&gt;Dolayisiyla &lt;strong&gt;knitr&lt;/strong&gt; ile birlikte bu uc program, &lt;strong&gt;R&lt;/strong&gt; + Markdown + &lt;strong&gt;Rstudio&lt;/strong&gt;, bize reproducible research yapabilmemiz icin yeterli ve bu arada hepsi de free software. Kisacasi bir tek &lt;em&gt;document&lt;/em&gt; a hem LaTeX kodu hem de &lt;strong&gt;R&lt;/strong&gt; kodunu yaziyorsunuz (.Rmd file) ve sonrasinda &lt;em&gt;compile&lt;/em&gt; edip PDF inize kavusmus oluyorsunuz. Aslina bakarsaniz, &lt;strong&gt;knitr&lt;/strong&gt; kullanarak reproducible research yapabilmemiz icin bu uc programin hicbiri farz degil, alternatif kombinasyonlara en sonda deginecegim. Rstudio nun sagladigi en onemli fayda ise &lt;em&gt;compile to PDF&lt;/em&gt; adimini sadece tek bir tusa indirgiyor olusu.&lt;/p&gt;
 
 &lt;h2 id=&quot;basit-bir-ornek&quot;&gt;Basit bir ornek&lt;/h2&gt;
 
@@ -79,9 +67,9 @@
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ggplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
     &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom_abline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intercept&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;slope&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-10-26-test/figure-1.png&quot; alt=&quot;plot of chunk figure&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-10-27-reproducible-research/figure-1.png&quot; alt=&quot;plot of chunk figure&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Bu ornekte damaginiza &lt;strong&gt;knitr&lt;/strong&gt; kullanimindan bir tat calmayi amacladim. Ozetleyecek olursak, guzel tablomuzu &lt;strong&gt;xtable&lt;/strong&gt; sayesinde ve guzel figurumuzu de &lt;strong&gt;ggplot2&lt;/strong&gt; sayesinde yaptik.&lt;/p&gt;
+&lt;p&gt;Bu ornekte damaginiza &lt;strong&gt;knitr&lt;/strong&gt; kullanimindan bir tat calmayi amacladim.&lt;/p&gt;
 
 &lt;p&gt;Benim ugrastigim problemlerde &lt;strong&gt;knitr&lt;/strong&gt; in saglamis oldugu cok onemli diger bir fayda ise &lt;em&gt;cache&lt;/em&gt; ozelligi. Simdi farz edin ki analiziniz yukaridaki gibi bir simple linear regression degil, mesela simulasyon yapiyorsunuz veya &lt;em&gt;bootstrapping&lt;/em&gt;. Dolayisiyla islem saatler surebilir. Bu durumda &lt;strong&gt;knitr&lt;/strong&gt; in cache ozelligini kullanabilirsiniz, ilk compilation da analiz yapilir (artik ne kadar suruyorsa) ve &lt;strong&gt;knitr&lt;/strong&gt; sizin icin outputu kaydeder. Sonraki compilationlarda ise knitr kaydedilmis outputu kullanir!&lt;/p&gt;
 
@@ -92,9 +80,20 @@
 &lt;p&gt;Daha once soyledigim gibi &lt;strong&gt;knitr&lt;/strong&gt; bayagi flexible. Mesela LaTeX kullanmak istemiyorsaniz, &lt;strong&gt;R&lt;/strong&gt; + &lt;strong&gt;Markdown&lt;/strong&gt; + &lt;strong&gt;Rstudio&lt;/strong&gt; da gayet guzel bir alternatif sizin icin. Boylece HTML ve ya Word output da elde edebilirsiniz, PDF in yaninda (ozellikle  LaTeX bilmiyorsaniz). Veyahut &lt;strong&gt;R&lt;/strong&gt; yerine &lt;strong&gt;Phyton&lt;/strong&gt;, &lt;strong&gt;SAS&lt;/strong&gt;, &lt;strong&gt;Ruby&lt;/strong&gt; kullanabilirsiniz, &lt;strong&gt;Rstudio&lt;/strong&gt; yerine &lt;strong&gt;LyX&lt;/strong&gt;, &lt;strong&gt;Texmaker&lt;/strong&gt; veya &lt;strong&gt;Emacs&lt;/strong&gt; kullanabilirsiniz. Fakat bence &lt;strong&gt;Rstudio&lt;/strong&gt; dan sasmamak en mantiklisi cunku Rstudio knitr icin &lt;em&gt;build-in support&lt;/em&gt; a sahip. Muhtemelen bunun onemli bir nedeni &lt;strong&gt;knitr&lt;/strong&gt; in yaraticisinin bir &lt;strong&gt;Rstudio&lt;/strong&gt; calisani olmasi. Hepsi ve daha fazlasi icin &lt;a href=&quot;http://yihui.name/knitr/&quot;&gt;&lt;strong&gt;knitr&lt;/strong&gt; in websitesine bakabilirsiniz&lt;/a&gt;. Son olarak, bu yazinin kendisi de &lt;strong&gt;knitr&lt;/strong&gt; kullanarak reproducible researche bir ornek, source code u yazardan taleb edebilirsiniz.&lt;/p&gt;
 
 </description>
+        <pubDate>Thu, 27 Oct 2016 00:00:00 +0200</pubDate>
+        <link>https://gunhanb.github.io/blog//blog//2016/10/reproducible-research.html</link>
+        <guid isPermaLink="true">https://gunhanb.github.io/blog//blog//2016/10/reproducible-research.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>How I got here?</title>
+        <description>&lt;p&gt;As someone with zero experience writing blogpost etc., &lt;a href=&quot;https://github.com/yihui/knitr-jekyll&quot;&gt;Yihui Xie’s minimal example&lt;/a&gt; helped me a lot to start blogging. Normally, it can be quite tedious to work with a Jekyll-based blog for someone like me. However, Yihui’s example explains you how to build a &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; website which uses &lt;a href=&quot;yihui.name/knitr/&quot;&gt;knitr&lt;/a&gt; and Rmarkdown. By the way, I wanted to use Jekyll because I want to include R code to my blog posts. Also, I was lucky and I had experience with knitr and Rmarkdown before. Finally, with the help of Rstudio, the road for blogging with Jekyll is open for many more R users, I believe!&lt;/p&gt;
+</description>
         <pubDate>Wed, 26 Oct 2016 00:00:00 +0200</pubDate>
-        <link>https://gunhanb.github.io/blog//blog//2016/10/test.html</link>
-        <guid isPermaLink="true">https://gunhanb.github.io/blog//blog//2016/10/test.html</guid>
+        <link>https://gunhanb.github.io/blog//blog//2016/10/how-I-got-here.html</link>
+        <guid isPermaLink="true">https://gunhanb.github.io/blog//blog//2016/10/how-I-got-here.html</guid>
         
         
       </item>
