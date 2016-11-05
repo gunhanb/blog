@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Nasil reproducible research yaparim?
+title: Nasil "reproducible research" yaparim?
 ---
 
 
