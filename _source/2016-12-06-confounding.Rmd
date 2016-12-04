@@ -4,7 +4,6 @@ title: Confounding or higher shoe size in well-paid people
 ---
 
 
-
 ```{r setup2, include=FALSE}
 set.seed(1234)
 x.male   <- runif(n = 500, min = 38.5673, max = 45.1111) + rnorm(n = 500, mean = 0, sd = 1)
