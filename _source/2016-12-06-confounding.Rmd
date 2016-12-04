@@ -3,9 +3,6 @@ layout: post
 title: Confounding or higher shoe size in well-paid people 
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 
 ```{r setup2, include=FALSE}

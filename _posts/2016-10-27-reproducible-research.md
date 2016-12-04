@@ -4,8 +4,6 @@ title: Nasıl "reproducible research" yaparım?
 ---
 
 
-
-
 Diyelim ki bir arkadaşınız yaklaşık bir sene önce tamamlamış olduğunuz bir *research* calışmanızdan birşey sordu. Calısmanıza dönüp analizleri tekrar gözden geçirmek, tablo ve figürleri *reproduce* edebilmeniz ne kadar vaktinizi alacaktır? Veya arkadaşınızı boşverin, sadece kendiniz 2 sene önce hazırlamış olduğunuz sunumdaki *result*larin tekrar elde etmeye calışsanız? Bu süreyi ve olası zahmeti azaltmanın (ve daha fazlası) metodu *reproducible research* yapmanız!
 
 
