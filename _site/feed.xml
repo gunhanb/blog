@@ -6,12 +6,12 @@
 </description>
     <link>https://gunhanb.github.io/blog//blog//</link>
     <atom:link href="https://gunhanb.github.io/blog//blog//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 04 Dec 2016 22:17:09 +0100</pubDate>
-    <lastBuildDate>Sun, 04 Dec 2016 22:17:09 +0100</lastBuildDate>
+    <pubDate>Sun, 04 Dec 2016 23:10:55 +0100</pubDate>
+    <lastBuildDate>Sun, 04 Dec 2016 23:10:55 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>Nasil &quot;reproducible research&quot; yaparim?</title>
+        <title>Nasıl &quot;reproducible research&quot; yaparım?</title>
         <description>&lt;p&gt;Diyelim ki bir arkadaşınız yaklaşık bir sene önce tamamlamış olduğunuz bir &lt;em&gt;research&lt;/em&gt; calışmanızdan birşey sordu. Calısmanıza dönüp analizleri tekrar gözden geçirmek, tablo ve figürleri &lt;em&gt;reproduce&lt;/em&gt; edebilmeniz ne kadar vaktinizi alacaktır? Veya arkadaşınızı boşverin, sadece kendiniz 2 sene önce hazırlamış olduğunuz sunumdaki &lt;em&gt;result&lt;/em&gt;larin tekrar elde etmeye calışsanız? Bu süreyi ve olası zahmeti azaltmanın (ve daha fazlası) metodu &lt;em&gt;reproducible research&lt;/em&gt; yapmanız!&lt;/p&gt;
 
 &lt;p&gt;Eğer günlük hayattaki calışmalarınızda bir sekilde &lt;em&gt;data analysis&lt;/em&gt; yapıyorsaniz, eski yontemler yerine &lt;em&gt;reproducible research&lt;/em&gt; kullanmaniz belki biraz daha zahmetli ama uzun vadede kesinlikle daha faydali.&lt;/p&gt;
