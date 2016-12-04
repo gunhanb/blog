@@ -21,7 +21,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/blog//">Burak's Personal Blog</a>
+    <a class="site-title" href="/blog//">Burak's Data Blog</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -62,15 +62,16 @@
   </header>
 
   <article class="post-content">
-    <p>Diyelim ki bir arkadasiniz yaklasik bir sene once tamamlamis oldugunuz bir <em>research</em> calismanizdan birsey sordu. Calismaniza donup analizleri tekrar gozden gecirmek, tablo ve figurlerin <em>reproduce</em> edebilmeniz ne kadar vaktinizi alacaktir? Veya arkadasinizi bosverin, sadece kendiniz 2 sene once hazirlamis oldugunuz sunumdaki <em>result</em>larin tekrar elde etmeye calissaniz? Bu sureyi ve olasi zahmeti azaltmanin (ve daha fazlasi) metodu <em>reproducible research</em> yapmaniz!</p>
+    <p>Diyelim ki bir arkadaşınız yaklaşık bir sene önce tamamlamış olduğunuz bir <em>research</em> calışmanızdan birşey sordu. Calısmanıza dönüp analizleri tekrar gözden geçirmek, tablo ve figürleri <em>reproduce</em> edebilmeniz ne kadar vaktinizi alacaktır? Veya arkadaşınızı boşverin, sadece kendiniz 2 sene önce hazırlamış olduğunuz sunumdaki <em>result</em>larin tekrar elde etmeye calışsanız? Bu süreyi ve olası zahmeti azaltmanın (ve daha fazlası) metodu <em>reproducible research</em> yapmanız!</p>
 
-<p>Eger gunluk hayattaki calismalarinizda bir sekilde <em>data analysis</em> yapiyorsaniz, eski yontemler yerine <em>reproducible research</em> kullanmaniz belki biraz daha zahmetli ama uzun vadede kesinlikle daha faydali.</p>
+<p>Eğer günlük hayattaki calışmalarınızda bir sekilde <em>data analysis</em> yapıyorsaniz, eski yontemler yerine <em>reproducible research</em> kullanmaniz belki biraz daha zahmetli ama uzun vadede kesinlikle daha faydali.</p>
 
-<p>Bir baska acidan bakacak olursak, geleneksel rapor yaziminda, sonuclari bir software de hesaplayip, sonra da hesaplamis oldugumuz sayilari elle sonuc bolumune yazariz. Ama bu yontem reproducible degil, data <em>software</em> e bagli fakat sonuclar yazdigimiz metine bagli degil, dolayisiyla hata yapma ihtimali bayagi yuksek.</p>
+<p>Bir başka açıdan bakacak olursak, geleneksel rapor yazımında, sonuçları bir software de hesaplayip, sonra da hesaplamış oldugumuz sayılari elle sonuç bölümüne yazarız. Ama bu yöntem reproducible değil, data <em>software</em> e bağlı fakat sonuçlar yazdıgımız metne bağlı değil, dolayısıyla hata yapma ihtimali bir hayli yüksek.</p>
 
-<p>Bu konu tabiiki bayagi genis ve kapsamli, ayrica niyetim bir <em>manual</em> yazmak degil. Bu yazida amacim kendi tecrubelerimden faydalanarak tamamen pratik acidan reproducible research’u kisaca anlatmaya calismak (<a href="http://reproducibleresearch.net">daha ayrintili bilgi icin tiklayin</a>). Turkce yazmamin amaci da bu konulardaki Turkce materyallerin eksigligi.</p>
+<p>Bu konu tabiiki bayağı geniş ve kapsamlı, ayrica niyetim bir <em>manual</em> yazmak değil. Bu yazıda amacım kendi tecrübelerimden faydalanarak tamamen pratik açıdan reproducible research’u kısaca anlatmaya calişmak (<a href="http://reproducibleresearch.net">daha ayrıntılı bilgi için tıklayin</a>). Turkce yazmamın amacı da bu konulardaki Türkçe materyallerin eksikliği.</p>
 
-<p>Ilk olarak data analysis’i hangi <em>software</em> de yapacagim sorusu karsimiza geliyor. Bir istatistikci oldugum icin buna verecegim cevap tabiki <a href="https://www.r-project.org"><strong>R</strong></a> (since <strong>R</strong> is made by statisticians for statisticians!). Ikinci olarak <em>typesetting</em> programimizi belirlememiz gerekiyor, raporu/makaleyi/tezi yazacagimiz veya sunumu hazirlayacagimiz program. Buna cevabimiz ise <em>LaTeX</em> olabilir. Fakat diger guclu bir alternatif ise <a href="https://daringfireball.net/projects/markdown/"><em>Markdown</em></a>. Markdown ile hem pdf, word veya HTML output elde edebiliyoruz. Ve ucuncu olarak bize uygun bir <em>text editor</em> gerekli, bunun icin de <strong>Rstudio</strong> yu kullaniyoruz. Sonunda sihirli dokunusu yapacak yani reproducible research u mumkun kilacak olan program (aslinda bir <strong>R</strong> <em>package</em>): <strong>knitr</strong>. Tam burada <strong>knitr</strong> in babasi olan programi hatirlatmam gerekiyor, saygi geregi <strong>Sweave</strong>.</p>
+<p>Ilk olarak data analysis’i hangi <em>software</em> de yapacagim sorusu karsimiza geliyor. Bir istatistikci oldugum icin buna verecegim cevap tabiki <a href="https://www.r-project.org"><strong>R</strong></a> (since <strong>R</strong> is made by statisticians for statisticians!). Ikinci olarak <em>typesetting</em> programimizi belirlememiz gerekiyor, raporu/makaleyi/tezi yazacagimiz veya sunumu hazirlayacagimiz program. Buna cevabimiz ise <em>LaTeX</em> olabilir. Fakat diger guclu bir alternatif ise <a href="https://daringfireball.net/projects/markdown/"><em>Markdown</em></a>. Markdown ile hem pdf, word veya HTML output elde edebiliyoruz. Bu yazida <em>Markdown</em> kullanacagiz, cünkü bize
+Ve ucuncu olarak bize uygun bir <em>text editor</em> gerekli, bunun icin de <strong>Rstudio</strong> yu kullaniyoruz. Sonunda sihirli dokunusu yapacak yani reproducible research u mumkun kilacak olan program (aslinda bir <strong>R</strong> <em>package</em>): <strong>knitr</strong>. Tam burada <strong>knitr</strong> in babasi olan programi hatirlatmam gerekiyor, saygi geregi <strong>Sweave</strong>.</p>
 
 <p>Dolayisiyla <strong>knitr</strong> ile birlikte bu uc program, <strong>R</strong> + Markdown + <strong>Rstudio</strong>, bize reproducible research yapabilmemiz icin yeterli ve bu arada hepsi de free software. Kisacasi bir tek <em>document</em> a hem LaTeX kodu hem de <strong>R</strong> kodunu yaziyorsunuz (.Rmd file) ve sonrasinda <em>compile</em> edip PDF inize kavusmus oluyorsunuz. Aslina bakarsaniz, <strong>knitr</strong> kullanarak reproducible research yapabilmemiz icin bu uc programin hicbiri farz degil, alternatif kombinasyonlara en sonda deginecegim. Rstudio nun sagladigi en onemli fayda ise <em>compile to PDF</em> adimini sadece tek bir tusa indirgiyor olusu.</p>
 
@@ -113,8 +114,11 @@
 
 <p>Simdi ise <em>data visualization</em>. Asagidaki <strong>R</strong> kod ile Figure 1’i elde ediyoruz.</p>
 
-<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
-</span><span class="n">ggplot</span><span class="p">(</span><span class="n">cars</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">speed</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## Warning: package 'ggplot2' was built under R version 3.3.2</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">ggplot</span><span class="p">(</span><span class="n">cars</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">speed</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> 
     </span><span class="n">geom_abline</span><span class="p">(</span><span class="n">intercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="n">slope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">2</span><span class="p">])</span></code></pre></figure>
 
 <p><img src="/blog/figure/source/2016-10-27-reproducible-research/figure-1.png" alt="plot of chunk figure" /></p>
@@ -141,12 +145,12 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">Burak's Personal Blog</h2>
+    <h2 class="footer-heading">Burak's Data Blog</h2>
 
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
-          <li>Burak's Personal Blog</li>
+          <li>Burak's Data Blog</li>
           <li><a href="mailto:burakgunhan@gmail.com">burakgunhan@gmail.com</a></li>
         </ul>
       </div>

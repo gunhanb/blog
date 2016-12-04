@@ -1,1 +1,1 @@
-This is my personla blog
+This is my personal data blog 
