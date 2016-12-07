@@ -6,9 +6,20 @@
 </description>
     <link>https://gunhanb.github.io/blog//blog//</link>
     <atom:link href="https://gunhanb.github.io/blog//blog//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 07 Dec 2016 01:06:31 +0100</pubDate>
-    <lastBuildDate>Wed, 07 Dec 2016 01:06:31 +0100</lastBuildDate>
+    <pubDate>Wed, 07 Dec 2016 01:08:00 +0100</pubDate>
+    <lastBuildDate>Wed, 07 Dec 2016 01:08:00 +0100</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Confounding or higher shoe size in well-paid people</title>
+        <description>&lt;p&gt;There are few terms in the context of statistics which stroke me when I, first, understand it. One of which is, undoubtedly, the concept of &lt;em&gt;confounding&lt;/em&gt;. This term attracted my attention; since, in my opinion, it has potential to explain many mechanisms in different fields when statistical methods are used as tools. As you may imagine, medicine, biology or political science are only some examples for different areas. I will try to explain the confounding with a &lt;em&gt;simple example&lt;/em&gt;, but first, I want to give an example from a real world discussion and then finish with that example.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 06 Dec 2016 00:00:00 +0100</pubDate>
+        <link>https://gunhanb.github.io/blog//blog//2016/12/confounding.html</link>
+        <guid isPermaLink="true">https://gunhanb.github.io/blog//blog//2016/12/confounding.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Nasıl &quot;reproducible research&quot; yaparım?</title>
