@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Burak&#39;s Data Blog</title>
+    <description>This is just another blog about statistics, R and data science etc.
+</description>
+    <link>https://gunhanb.github.io/blog//blog//</link>
+    <atom:link href="https://gunhanb.github.io/blog//blog//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 07 Dec 2016 01:02:25 +0100</pubDate>
+    <lastBuildDate>Wed, 07 Dec 2016 01:02:25 +0100</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>How I got here?</title>
+        <description>&lt;p&gt;As someone with zero experience writing blogpost etc., &lt;a href=&quot;https://github.com/yihui/knitr-jekyll&quot;&gt;Yihui Xie’s minimal example&lt;/a&gt; helped me a lot to start blogging. Normally, it can be quite tedious to work with a Jekyll-based blog for someone like me. However, Yihui’s example explains you how to build a &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; website which uses &lt;a href=&quot;yihui.name/knitr/&quot;&gt;knitr&lt;/a&gt; and Rmarkdown. By the way, I wanted to use Jekyll because I want to include R code to my blog posts. Also, I was lucky and I had experience with knitr and Rmarkdown before. Finally, with the help of Rstudio, the road for blogging with Jekyll is open for many more R users, I believe!&lt;/p&gt;
+</description>
+        <pubDate>Wed, 26 Oct 2016 00:00:00 +0200</pubDate>
+        <link>https://gunhanb.github.io/blog//blog//2016/10/how-I-got-here.html</link>
+        <guid isPermaLink="true">https://gunhanb.github.io/blog//blog//2016/10/how-I-got-here.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
