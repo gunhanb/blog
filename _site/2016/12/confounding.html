@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Confounding or higher shoe size in well-paid people</title>
+    <title>Confounding or the relationship between shoe size and salary</title>
     <meta name="description" content="This is just another blog about statistics, R and data science etc.
 ">
 
@@ -57,12 +57,34 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Confounding or higher shoe size in well-paid people</h1>
+    <h1 class="post-title">Confounding or the relationship between shoe size and salary</h1>
     <p class="post-meta">Dec 6, 2016</p>
   </header>
 
   <article class="post-content">
-    <p>There are few terms in the context of statistics which stroke me when I, first, understand it. One of which is, undoubtedly, the concept of <em>confounding</em>. This term attracted my attention; since, in my opinion, it has potential to explain many mechanisms in different fields when statistical methods are used as tools. As you may imagine, medicine, biology or political science are only some examples for different areas. I will try to explain the confounding with a <em>simple example</em>, but first, I want to give an example from a real world discussion and then finish with that example.</p>
+    <p>There are few terms in the context of statistics which I find very interesting and powerful when I, first, understand it. One of which is, undoubtedly, the concept of <em>confounding</em>. This term attracted my attention; since, in my opinion, it has potential to explain many mechanisms in different fields when statistical methods are used as tools. As you may imagine, medicine, biology or political science are only some examples for different areas. To explain the confounding, I use following example.</p>
+
+<h1 id="a-simple-example">A simple example</h1>
+
+<p>Now, assume that we want to examine the association between the salary per month of a person who lives in Zurich city and his or her shoe size. Of course, you may think this example is a silly one, but, I believe, by using such an example, one can understand the confounder term very easily. In order to have some data to analyse, you go to city’s most crowded street and collect data by using a questionnaire. Assume that your questionnaire is valid, you asked 1000 people (enough sample size!), so in short your data is <em>reliable</em>. Then you want to plot your data so as to see what is going on in the dataset. So, you decided to use a scatterplot, and you get below figure.</p>
+
+<p><img src="/blog/figure/source/2016-12-06-confounding/plot1-1.png" alt="plot of chunk plot1" /></p>
+
+<p>Moreover, you use simple regression, estimated the regression line and plot it as a superimposed line to the Figure (Of course I did not do any survey, I just simulated data).</p>
+
+<p>Then, you concluded from this Figure as follows:</p>
+
+<blockquote>
+  <p>There is a strong association between shoe size and salary per month. With increasing shoe size of a person, his or her salary is increasing.</p>
+</blockquote>
+
+<p>So far, everything seems you correct but still we have a weird conclusion, right? You can understand the underlying problem, when you plot the same data but now using different colors for male and female (luckily you have gender information coming from your questionnaire). And you plot two simple regression lines for female and male separately – you estimated those two lines by using two different subset of data. So we obtained the below Figure.</p>
+
+<p><img src="/blog/figure/source/2016-12-06-confounding/plot2-1.png" alt="plot of chunk plot2" /></p>
+
+<p>Now our conclusion is changed completely! The <em>effect</em> vanished, and now we don’t have any evidence suggest that there is an association between shoe size and salary. Our possible conclusion, however, is as follows. Males have substantially larger shoe size than females on average (which has a biological explanation) and also, males has earning more money on average (which is also true indeed). But shoe size has nothing to do with salary for both subset of data! In such a case, <em>gender</em> is a confounding variable which is mixing the effect. In this scenario, we see an effect which is not there, actually. But in other situations, you can see an effect but you may get the direction wrong.</p>
+
+<p>These situations are not an extreme cases, especially if you are working with <em>observational</em> data. Therefore, one should try to eliminate any possible confounders. For example, if you are investigating a health-related issue, age and gender are usual suspects. But at the end of the day, it is very important not to <em>overinterpret</em> the results in case of any confounders.</p>
 
   </article>
 
