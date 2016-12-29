@@ -4,7 +4,7 @@
  <title>Burak's Data Blog</title>
  <link href="https://gunhanb.github.io/blog///blogatom.xml" rel="self"/>
  <link href="https://gunhanb.github.io/blog///blog"/>
- <updated>2016-12-29T19:15:23+01:00</updated>
+ <updated>2016-12-29T19:21:51+01:00</updated>
  <id>https://gunhanb.github.io/blog/</id>
  <author>
    <name>Burak Kursad Gunhan</name>
@@ -19,7 +19,7 @@
    <id>https://gunhanb.github.io/blog//2016/12/08/life-expectancy</id>
    <content type="html">&lt;p&gt;Here I want to talk about a very common mistake when it comes to &lt;em&gt;life expectancy&lt;/em&gt; and its interpretation. In one of my epidemiology courses, the lecturer showed the below Figure.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-08-life-expectancy/LifeEx.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-12-08-life-expectancy/LifeEx.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I am sure you also see graphs like that not this particular one (I mean for Switzerland) but maybe similar. OK, we see a very clear trend that life expectancy increasing in the last century. It was even doubled, right? That’s very nice. And we also see that there is clear difference between men and women but it is not my issue here.&lt;/p&gt;
 
@@ -27,7 +27,7 @@
 
 &lt;p&gt;Now, let’s consider not 1900 but long before, for instance think about our ancestors, hunter gatherers. What we expect is that they may have similar (or even low say 30?) life expectancy like 1900, right? So lets think from a hunter gatherer perspective and see this below Figure for this purpose.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-08-life-expectancy/Foragers.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-12-08-life-expectancy/Foragers.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Our ancestors did not get it why they could not survive after 30. But the achievements of the medicine fully can explain it?&lt;/p&gt;
 

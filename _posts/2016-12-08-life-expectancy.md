@@ -14,7 +14,7 @@ output:
 
 Here I want to talk about a very common mistake when it comes to *life expectancy* and its interpretation. In one of my epidemiology courses, the lecturer showed the below Figure. 
 
-![](/figure/source/2016-12-08-life-expectancy/LifeEx.png)
+![](/blog/figure/source/2016-12-08-life-expectancy/LifeEx.png)
 
 
 
@@ -24,7 +24,7 @@ I am more interested in the increase of the life expectancy. To understand it be
 
 Now, let's consider not 1900 but long before, for instance think about our ancestors, hunter gatherers. What we expect is that they may have similar (or even low say 30?) life expectancy like 1900, right? So lets think from a hunter gatherer perspective and see this below Figure for this purpose. 
 
-![](/figure/source/2016-12-08-life-expectancy/Foragers.png)
+![](/blog/figure/source/2016-12-08-life-expectancy/Foragers.png)
 
 Our ancestors did not get it why they could not survive after 30. But the achievements of the medicine fully can explain it? 
 
