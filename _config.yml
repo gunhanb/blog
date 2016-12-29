@@ -11,11 +11,11 @@ permalink: /:year/:month/:day/:title.html
 title:            Burak's Data Blog
 tagline:          ''
 description:      'This is just another blog about statistics, R and data science etc.'
-baseurl: "" # If you are making a gh-pages project blog, this is
+baseurl: "/blog" # If you are making a gh-pages project blog, this is
                         # the name of your project repo, preceded by a /'
                         # Set it to just "/" if you are making a user page.
 
-baseurlknitr:  "/" # This will always be your baseurl plus and extra '/'
+baseurlknitr:  "/blog/" # This will always be your baseurl plus and extra '/'
                                 # at the end.  It's used only when knitr renders
                                 # your R Markdown files.
 

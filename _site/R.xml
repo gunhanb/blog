@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Burak's Data Blog</title>
- <link href="https://gunhanb.github.io/blog//R.xml" rel="self"/>
- <link href="https://gunhanb.github.io/blog//"/>
- <updated>2016-12-29T18:28:24+01:00</updated>
+ <link href="https://gunhanb.github.io/blog///blogR.xml" rel="self"/>
+ <link href="https://gunhanb.github.io/blog///blog"/>
+ <updated>2016-12-29T18:46:32+01:00</updated>
  <id>https://gunhanb.github.io/blog/</id>
  <author>
    <name>Burak Kursad Gunhan</name>
