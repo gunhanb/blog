@@ -4,7 +4,7 @@ title: Confounding or the relationship between shoe size and salary
 comments: true
 published: true
 date: 2016-12-06
-categories: Statistics, epidemiology
+categories: [Statistics, epidemiology]
 output:
   html_document:
     mathjax:  default
@@ -46,7 +46,7 @@ Then, you concluded from this Figure as follows:
 
 So far, everything seems you correct but still we have a weird conclusion, right? You can understand the underlying problem, when you plot the same data but now using different colors for male and female (luckily you have gender information coming from your questionnaire). And you plot two simple regression lines for female and male separately -- you estimated those two lines by using two different subset of data. So we obtained the below Figure.
 
-```{r plot2, echo=FALSE, fig_caption=TRUE}
+```{r plot2, echo=FALSE}
 plot(y ~ x, data = dat, ylab = "Salary per month (in chf)", xlab = "Shoe size", col = mycol, pch = 1)
 legend("topleft", legend = c("Male", "Female"), col = c("blue", "hotpink"), pch = 1)
 abline(summary(lm(y.female ~ x.female))$coefficients[, 1], col = "black")

@@ -1,11 +1,11 @@
 ---
 layout: post
 title: A misunderstanding about life expectancy
-author: Burak Kursad Gunhan
-comments: true
-published: true
-date: 2016-12-08
-categories: Epidemiology
+comments:  true
+published:  true
+author: "Burak Kursad Gunhan"
+date: 2016-12-08 20:00:00
+categories: [Epidemiology]
 output:
   html_document:
     mathjax:  default

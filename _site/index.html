@@ -133,11 +133,11 @@
 
 <p>OK, the definition seems unnecessarily complicated, but important point is that life expectancy is just a mean. So it is one type of statistical measure. But to gain more insight about the data maybe it is better to look more than just mean values. Unfortunately, I don’t have the real data, so lets just simulate some data for our purpose and plot it:</p>
 
-<p><img src="/figure/source/2016-12-08-life-expectancy/plot1-1.png" alt="plot of chunk plot1" /></p>
+<p><img src="/blog/figure/source/2016-12-08-life-expectancy/plot1-1.png" alt="plot of chunk plot1" /></p>
 
 <p>Now in the above Figure, you see all data points (the mean length of life bla bla bla <em>per person</em>) as well as the life expectancy as red crosses (or let’s call it mean values). But the problem is that in reality data do not look like that Figure, but instead more look like the below Figure.</p>
 
-<p><img src="/figure/source/2016-12-08-life-expectancy/plot2-1.png" alt="plot of chunk plot2" /></p>
+<p><img src="/blog/figure/source/2016-12-08-life-expectancy/plot2-1.png" alt="plot of chunk plot2" /></p>
 
 <p>So lets compare those two Figures which are based on two different simulated datasets. Firstly the red crosses are exactly has the same values (monotonically increasing from a value close to 40 to a value close to 80). That implies mean values are the same. But in the second Figure, there are many data points very close to zero values. But the second set of data points of each given year (values which are far away to zero) seem to not increasing much. So what does that mean?. Those very small data points corresponding to children who died at very early ages (<em>infant mortality</em>). And as you can see, with decreasing of the infant mortality, the mean values are going away from zero even if the adult mortality stays constant.</p>
 
@@ -166,7 +166,7 @@
 
 <p>Now, assume that we want to examine the association between the salary per month of a person who lives in Zurich city and his or her shoe size. Of course, you may think this example is a silly one, but, I believe, by using such an example, one can understand the confounder term very easily. In order to have some data to analyse, you go to city’s most crowded street and collect data by using a questionnaire. Assume that your questionnaire is valid, you asked 1000 people (enough sample size!), so in short your data is <em>reliable</em>. Then you want to plot your data so as to see what is going on in the dataset. So, you decided to use a scatterplot, and you get below figure.</p>
 
-<p><img src="/figure/source/2016-12-06-confounding/plot1-1.png" alt="plot of chunk plot1" /></p>
+<p><img src="/blog/figure/source/2016-12-06-confounding/plot1-1.png" alt="plot of chunk plot1" /></p>
 
 <p>Moreover, you use simple regression, estimated the regression line and plot it as a superimposed line to the Figure (Of course I did not do any survey, I just simulated data).</p>
 
@@ -178,7 +178,7 @@
 
 <p>So far, everything seems you correct but still we have a weird conclusion, right? You can understand the underlying problem, when you plot the same data but now using different colors for male and female (luckily you have gender information coming from your questionnaire). And you plot two simple regression lines for female and male separately – you estimated those two lines by using two different subset of data. So we obtained the below Figure.</p>
 
-<p><img src="/figure/source/2016-12-06-confounding/plot2-1.png" alt="plot of chunk plot2" /></p>
+<p><img src="/blog/figure/source/2016-12-06-confounding/plot2-1.png" alt="plot of chunk plot2" /></p>
 
 <p>Now our conclusion is changed completely! The <em>effect</em> vanished, and now we don’t have any evidence suggest that there is an association between shoe size and salary. Our possible conclusion, however, is as follows. Males have substantially larger shoe size than females on average (which has a biological explanation) and also, males has earning more money on average (which is also true indeed). But shoe size has nothing to do with salary for both subset of data! In such a case, <em>gender</em> is a confounding variable which is mixing the effect. In this scenario, we see an effect which is not there, actually. But in other situations, you can see an effect but you may get the direction wrong.</p>
 

@@ -4,7 +4,7 @@
  <title>Burak's Data Blog</title>
  <link href="https://gunhanb.github.io/blog///blogatom.xml" rel="self"/>
  <link href="https://gunhanb.github.io/blog///blog"/>
- <updated>2016-12-29T19:04:46+01:00</updated>
+ <updated>2016-12-29T19:08:12+01:00</updated>
  <id>https://gunhanb.github.io/blog/</id>
  <author>
    <name>Burak Kursad Gunhan</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>A misunderstanding about life expectancy</title>
    <link href="https://gunhanb.github.io/blog//2016/12/08/life-expectancy.html"/>
-   <updated>2016-12-08T00:00:00+01:00</updated>
+   <updated>2016-12-08T21:00:00+01:00</updated>
    <id>https://gunhanb.github.io/blog//2016/12/08/life-expectancy</id>
    <content type="html">&lt;p&gt;Here I want to talk about a very common mistake when it comes to &lt;em&gt;life expectancy&lt;/em&gt; and its interpretation. In one of my epidemiology courses, the lecturer showed the below Figure.&lt;/p&gt;
 
@@ -39,11 +39,11 @@
 
 &lt;p&gt;OK, the definition seems unnecessarily complicated, but important point is that life expectancy is just a mean. So it is one type of statistical measure. But to gain more insight about the data maybe it is better to look more than just mean values. Unfortunately, I don’t have the real data, so lets just simulate some data for our purpose and plot it:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-08-life-expectancy/plot1-1.png&quot; alt=&quot;plot of chunk plot1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-12-08-life-expectancy/plot1-1.png&quot; alt=&quot;plot of chunk plot1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now in the above Figure, you see all data points (the mean length of life bla bla bla &lt;em&gt;per person&lt;/em&gt;) as well as the life expectancy as red crosses (or let’s call it mean values). But the problem is that in reality data do not look like that Figure, but instead more look like the below Figure.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-08-life-expectancy/plot2-1.png&quot; alt=&quot;plot of chunk plot2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-12-08-life-expectancy/plot2-1.png&quot; alt=&quot;plot of chunk plot2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So lets compare those two Figures which are based on two different simulated datasets. Firstly the red crosses are exactly has the same values (monotonically increasing from a value close to 40 to a value close to 80). That implies mean values are the same. But in the second Figure, there are many data points very close to zero values. But the second set of data points of each given year (values which are far away to zero) seem to not increasing much. So what does that mean?. Those very small data points corresponding to children who died at very early ages (&lt;em&gt;infant mortality&lt;/em&gt;). And as you can see, with decreasing of the infant mortality, the mean values are going away from zero even if the adult mortality stays constant.&lt;/p&gt;
 
@@ -65,7 +65,7 @@
 
 &lt;p&gt;Now, assume that we want to examine the association between the salary per month of a person who lives in Zurich city and his or her shoe size. Of course, you may think this example is a silly one, but, I believe, by using such an example, one can understand the confounder term very easily. In order to have some data to analyse, you go to city’s most crowded street and collect data by using a questionnaire. Assume that your questionnaire is valid, you asked 1000 people (enough sample size!), so in short your data is &lt;em&gt;reliable&lt;/em&gt;. Then you want to plot your data so as to see what is going on in the dataset. So, you decided to use a scatterplot, and you get below figure.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-06-confounding/plot1-1.png&quot; alt=&quot;plot of chunk plot1&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-12-06-confounding/plot1-1.png&quot; alt=&quot;plot of chunk plot1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Moreover, you use simple regression, estimated the regression line and plot it as a superimposed line to the Figure (Of course I did not do any survey, I just simulated data).&lt;/p&gt;
 
@@ -77,7 +77,7 @@
 
 &lt;p&gt;So far, everything seems you correct but still we have a weird conclusion, right? You can understand the underlying problem, when you plot the same data but now using different colors for male and female (luckily you have gender information coming from your questionnaire). And you plot two simple regression lines for female and male separately – you estimated those two lines by using two different subset of data. So we obtained the below Figure.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-06-confounding/plot2-1.png&quot; alt=&quot;plot of chunk plot2&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-12-06-confounding/plot2-1.png&quot; alt=&quot;plot of chunk plot2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now our conclusion is changed completely! The &lt;em&gt;effect&lt;/em&gt; vanished, and now we don’t have any evidence suggest that there is an association between shoe size and salary. Our possible conclusion, however, is as follows. Males have substantially larger shoe size than females on average (which has a biological explanation) and also, males has earning more money on average (which is also true indeed). But shoe size has nothing to do with salary for both subset of data! In such a case, &lt;em&gt;gender&lt;/em&gt; is a confounding variable which is mixing the effect. In this scenario, we see an effect which is not there, actually. But in other situations, you can see an effect but you may get the direction wrong.&lt;/p&gt;
 

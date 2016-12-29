@@ -1,11 +1,11 @@
 ---
 layout: post
 title: A misunderstanding about life expectancy
-author: Burak Kursad Gunhan
-comments: true
-published: true
-date: 2016-12-08
-categories: Epidemiology
+comments:  true
+published:  true
+author: "Burak Kursad Gunhan"
+date: 2016-12-08 20:00:00
+categories: [Epidemiology]
 output:
   html_document:
     mathjax:  default
@@ -35,12 +35,12 @@ At this point, to understand better, we need to look at the precise definition o
 OK, the definition seems unnecessarily complicated, but important point is that life expectancy is just a mean. So it is one type of statistical measure. But to gain more insight about the data maybe it is better to look more than just mean values. Unfortunately, I don't have the real data, so lets just simulate some data for our purpose and plot it:
 
 
-![plot of chunk plot1](/figure/source/2016-12-08-life-expectancy/plot1-1.png)
+![plot of chunk plot1](/blog/figure/source/2016-12-08-life-expectancy/plot1-1.png)
 
 Now in the above Figure, you see all data points (the mean length of life bla bla bla *per person*) as well as the life expectancy as red crosses (or let's call it mean values). But the problem is that in reality data do not look like that Figure, but instead more look like the below Figure.
 
 
-![plot of chunk plot2](/figure/source/2016-12-08-life-expectancy/plot2-1.png)
+![plot of chunk plot2](/blog/figure/source/2016-12-08-life-expectancy/plot2-1.png)
 
 
 So lets compare those two Figures which are based on two different simulated datasets. Firstly the red crosses are exactly has the same values (monotonically increasing from a value close to 40 to a value close to 80). That implies mean values are the same. But in the second Figure, there are many data points very close to zero values. But the second set of data points of each given year (values which are far away to zero) seem to not increasing much. So what does that mean?. Those very small data points corresponding to children who died at very early ages (*infant mortality*). And as you can see, with decreasing of the infant mortality, the mean values are going away from zero even if the adult mortality stays constant. 
