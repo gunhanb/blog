@@ -1,6 +1,6 @@
 local({
   # fall back on '/' if baseurl is not specified
-  baseurl = servr:::jekyll_config('.', 'baseurl', '/')
+  baseurl = servr:::jekyll_config('.', 'baseurlknitr', '/')
   knitr::opts_knit$set(base.url = baseurl)
   # fall back on 'kramdown' if markdown engine is not specified
   markdown = servr:::jekyll_config('.', 'markdown', 'kramdown')
@@ -18,13 +18,13 @@ local({
   )
   # set where you want to host the figures (I store them in my Dropbox Public
   # folder, and you might prefer putting them in GIT)
-  if (Sys.getenv('USER') == 'yihui') {
+  if (Sys.getenv('USER') == 'noway') {
     # these settings are only for myself, and they will not apply to you, but
     # you may want to adapt them to your own website
     knitr::opts_chunk$set(fig.path = sprintf('%s/', gsub('^.+/', '', d)))
     knitr::opts_knit$set(
       base.dir = '~/Dropbox/Public/jekyll/',
-      base.url = 'http://db.yihui.name/jekyll/'
+      base.url = 'https://www.dropbox.com/sh/orkmbexqh3c0n0y/AADNo0xV6H0UB1tehmt2QTIla?dl=0/jekyll/'
     )
   }
   knitr::opts_knit$set(width = 70)

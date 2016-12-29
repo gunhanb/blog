@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Confounding or the relationship between shoe size and salary &middot; Burak's Data Blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  
+  <!-- Mathjax -->
+  <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+    <!--Disqus comment counts-->
+    <script id="dsq-count-scr" src="//https-gunhanb-github-io-blog.disqus.com/count.js" async></script>
+    
+</head>
+
+
+  <body class="theme-base-0b">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="">
+          Burak's Data Blog
+        </a>
+      </h1>
+      <p class="lead">This is just another blog about statistics, R and data science etc.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about.html">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/archive.html">Archives</a>
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/categories.html">Categories</a>
+          
+        
+      
+        
+          
+        
+      
+      <a class="sidebar-nav-item" href="https://github.com/gunhanb/blog">GitHub project</a>
+    </nav>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Confounding or the relationship between shoe size and salary</h1>
+  <span class="post-date">06 Dec 2016</span>
+  <p>There are few terms in the context of statistics which I find very interesting and powerful when I, first, understand it. One of which is, undoubtedly, the concept of <em>confounding</em>. This term attracted my attention; since, in my opinion, it has potential to explain many mechanisms in different fields when statistical methods are used as tools. As you may imagine, medicine, biology or political science are only some examples for different areas. To explain the confounding, I use following example.</p>
+
+<h1 id="a-simple-example">A simple example</h1>
+
+<p>Now, assume that we want to examine the association between the salary per month of a person who lives in Zurich city and his or her shoe size. Of course, you may think this example is a silly one, but, I believe, by using such an example, one can understand the confounder term very easily. In order to have some data to analyse, you go to city’s most crowded street and collect data by using a questionnaire. Assume that your questionnaire is valid, you asked 1000 people (enough sample size!), so in short your data is <em>reliable</em>. Then you want to plot your data so as to see what is going on in the dataset. So, you decided to use a scatterplot, and you get below figure.</p>
+
+<p><img src="/figure/source/2016-12-06-confounding/plot1-1.png" alt="plot of chunk plot1" /></p>
+
+<p>Moreover, you use simple regression, estimated the regression line and plot it as a superimposed line to the Figure (Of course I did not do any survey, I just simulated data).</p>
+
+<p>Then, you concluded from this Figure as follows:</p>
+
+<blockquote>
+  <p>There is a strong association between shoe size and salary per month. With increasing shoe size of a person, his or her salary is increasing.</p>
+</blockquote>
+
+<p>So far, everything seems you correct but still we have a weird conclusion, right? You can understand the underlying problem, when you plot the same data but now using different colors for male and female (luckily you have gender information coming from your questionnaire). And you plot two simple regression lines for female and male separately – you estimated those two lines by using two different subset of data. So we obtained the below Figure.</p>
+
+<p><img src="/figure/source/2016-12-06-confounding/plot2-1.png" alt="plot of chunk plot2" /></p>
+
+<p>Now our conclusion is changed completely! The <em>effect</em> vanished, and now we don’t have any evidence suggest that there is an association between shoe size and salary. Our possible conclusion, however, is as follows. Males have substantially larger shoe size than females on average (which has a biological explanation) and also, males has earning more money on average (which is also true indeed). But shoe size has nothing to do with salary for both subset of data! In such a case, <em>gender</em> is a confounding variable which is mixing the effect. In this scenario, we see an effect which is not there, actually. But in other situations, you can see an effect but you may get the direction wrong.</p>
+
+<p>These situations are not an extreme cases, especially if you are working with <em>observational</em> data. Therefore, one should try to eliminate any possible confounders. For example, if you are investigating a health-related issue, age and gender are usual suspects. But at the end of the day, it is very important not to <em>overinterpret</em> the results in case of any confounders.</p>
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/12/08/life-expectancy.html">
+            A misunderstanding about life expectancy
+            <small>08 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/10/27/reproducible-research.html">
+            Nasıl "reproducible research" yaparım?
+            <small>27 Oct 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/10/26/how-I-got-here.html">
+            How I got here?
+            <small>26 Oct 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+<a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-share-button" data-href="https://gunhanb.github.io/blog/" data-layout="button_count"></div>
+
+
+
+
+<div id="disqus_thread"></div>
+
+<script>(function() {
+        var d = document, s = d.createElement('script');
+        s.src = '//https-gunhanb-github-io-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+    </div>
+
+  </body>
+</html>

@@ -1,6 +1,15 @@
 ---
 layout: post
 title: Nasıl "reproducible research" yaparım?
+comments: true
+published: true
+date: 2016-10-27
+categories: R, turkish
+output:
+  html_document:
+    mathjax:  default
+    fig_caption:  true
+
 ---
 
 
@@ -68,7 +77,7 @@ ggplot(cars, aes(x = speed, y = dist)) + geom_point() +
     geom_abline(intercept = coef(fit)[1], slope = coef(fit)[2])
 {% endhighlight %}
 
-![plot of chunk figure](/blog/figure/source/2016-10-27-reproducible-research/figure-1.png)
+![plot of chunk figure](/figure/source/2016-10-27-reproducible-research/figure-1.png)
 
 Bu ornekte damaginiza **knitr** kullanimindan bir tat calmayi amacladim.  
 

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Nasıl "reproducible research" yaparım? &middot; Burak's Data Blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  
+  <!-- Mathjax -->
+  <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+    <!--Disqus comment counts-->
+    <script id="dsq-count-scr" src="//https-gunhanb-github-io-blog.disqus.com/count.js" async></script>
+    
+</head>
+
+
+  <body class="theme-base-0b">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="">
+          Burak's Data Blog
+        </a>
+      </h1>
+      <p class="lead">This is just another blog about statistics, R and data science etc.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about.html">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/archive.html">Archives</a>
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/categories.html">Categories</a>
+          
+        
+      
+        
+          
+        
+      
+      <a class="sidebar-nav-item" href="https://github.com/gunhanb/blog">GitHub project</a>
+    </nav>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Nasıl "reproducible research" yaparım?</h1>
+  <span class="post-date">27 Oct 2016</span>
+  <p>Diyelim ki bir arkadaşınız yaklaşık bir sene önce tamamlamış olduğunuz bir <em>research</em> calışmanızdan birşey sordu. Calısmanıza dönüp analizleri tekrar gözden geçirmek, tablo ve figürleri <em>reproduce</em> edebilmeniz ne kadar vaktinizi alacaktır? Veya arkadaşınızı boşverin, sadece kendiniz 2 sene önce hazırlamış olduğunuz sunumdaki <em>result</em>larin tekrar elde etmeye calışsanız? Bu süreyi ve olası zahmeti azaltmanın (ve daha fazlası) metodu <em>reproducible research</em> yapmanız!</p>
+
+<p>Eğer günlük hayattaki calışmalarınızda bir sekilde <em>data analysis</em> yapıyorsaniz, eski yontemler yerine <em>reproducible research</em> kullanmaniz belki biraz daha zahmetli ama uzun vadede kesinlikle daha faydali.</p>
+
+<p>Bir başka açıdan bakacak olursak, geleneksel rapor yazımında, sonuçları bir software de hesaplayip, sonra da hesaplamış oldugumuz sayılari elle sonuç bölümüne yazarız. Ama bu yöntem reproducible değil, data <em>software</em> e bağlı fakat sonuçlar yazdıgımız metne bağlı değil, dolayısıyla hata yapma ihtimali bir hayli yüksek.</p>
+
+<p>Bu konu tabiiki bayağı geniş ve kapsamlı, ayrica niyetim bir <em>manual</em> yazmak değil. Bu yazıda amacım kendi tecrübelerimden faydalanarak tamamen pratik açıdan reproducible research’u kısaca anlatmaya calişmak (<a href="http://reproducibleresearch.net">daha ayrıntılı bilgi için tıklayin</a>). Turkce yazmamın amacı da bu konulardaki Türkçe materyallerin eksikliği.</p>
+
+<p>Ilk olarak data analysis’i hangi <em>software</em> de yapacagim sorusu karsimiza geliyor. Bir istatistikci oldugum icin buna verecegim cevap tabiki <a href="https://www.r-project.org"><strong>R</strong></a> (since <strong>R</strong> is made by statisticians for statisticians!). Ikinci olarak <em>typesetting</em> programimizi belirlememiz gerekiyor, raporu/makaleyi/tezi yazacagimiz veya sunumu hazirlayacagimiz program. Buna cevabimiz ise <em>LaTeX</em> olabilir. Fakat diger guclu bir alternatif ise <a href="https://daringfireball.net/projects/markdown/"><em>Markdown</em></a>. Markdown ile hem pdf, word veya HTML output elde edebiliyoruz. Bu yazida <em>Markdown</em> kullanacagiz, cünkü bize
+Ve ucuncu olarak bize uygun bir <em>text editor</em> gerekli, bunun icin de <strong>Rstudio</strong> yu kullaniyoruz. Sonunda sihirli dokunusu yapacak yani reproducible research u mumkun kilacak olan program (aslinda bir <strong>R</strong> <em>package</em>): <strong>knitr</strong>. Tam burada <strong>knitr</strong> in babasi olan programi hatirlatmam gerekiyor, saygi geregi <strong>Sweave</strong>.</p>
+
+<p>Dolayisiyla <strong>knitr</strong> ile birlikte bu uc program, <strong>R</strong> + Markdown + <strong>Rstudio</strong>, bize reproducible research yapabilmemiz icin yeterli ve bu arada hepsi de free software. Kisacasi bir tek <em>document</em> a hem LaTeX kodu hem de <strong>R</strong> kodunu yaziyorsunuz (.Rmd file) ve sonrasinda <em>compile</em> edip PDF inize kavusmus oluyorsunuz. Aslina bakarsaniz, <strong>knitr</strong> kullanarak reproducible research yapabilmemiz icin bu uc programin hicbiri farz degil, alternatif kombinasyonlara en sonda deginecegim. Rstudio nun sagladigi en onemli fayda ise <em>compile to PDF</em> adimini sadece tek bir tusa indirgiyor olusu.</p>
+
+<h2 id="basit-bir-ornek">Basit bir ornek</h2>
+
+<p><em>Base R</em> dan <em>cars</em> adli <em>dataset</em> i kullanacagiz. Bu dataset farkli arabalarin hizlari (<em>speed variable</em>) ve her bir arabanin durmak icin gerekli mesafelerini (<em>dist variable</em>) iceriyor. Bu datayi analiz etmek icin <em>linear regression</em> kullaniyoruz ve gerekli <strong>R</strong> kodu asagidaki gibi gosterebiliriz.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">fit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">lm</span><span class="p">(</span><span class="n">dist</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">speed</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cars</span><span class="p">)</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">linear</span><span class="w"> </span><span class="n">regression</span><span class="w"> </span></code></pre></figure>
+
+<p>Tabii sonuclari -mesela bu ornekte <em>coefficients</em>- bir tabloda gostermek isteyebiliriz. Bunun icin de <strong>xtable</strong> (bir <strong>R</strong> package) bize yardimci olacak. Asagidaki <strong>R</strong> kodu bize gerekli HTML kodu veriyor, ve compile ettikten sonra da Tablo 1’i elde ediyoruz.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">knitr</span><span class="p">)</span><span class="w">
+</span><span class="n">coefs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">matrix</span><span class="p">(</span><span class="n">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span><span class="w">
+</span><span class="n">rownames</span><span class="p">(</span><span class="n">coefs</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"Intercept"</span><span class="p">,</span><span class="w"> </span><span class="s2">"speed"</span><span class="p">)</span><span class="w">
+</span><span class="n">kable</span><span class="p">(</span><span class="n">coefs</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"tab:coefs"</span><span class="p">,</span><span class="w">
+      </span><span class="n">digits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w">
+      </span><span class="n">row.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> 
+      </span><span class="n">col.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Estimate"</span><span class="p">)</span></code></pre></figure>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: right">Estimate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Intercept</td>
+      <td style="text-align: right">-17.58</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">speed</td>
+      <td style="text-align: right">3.93</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Normal sartlarda tabloyu yaratan <strong>R</strong> kodu okuyucuya gostermeye gerek yok fakat ben ornek olmasi acisindan gosteriyorum.</p>
+
+<p>Simdi ise <em>data visualization</em>. Asagidaki <strong>R</strong> kod ile Figure 1’i elde ediyoruz.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+</span><span class="n">ggplot</span><span class="p">(</span><span class="n">cars</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">speed</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dist</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+    </span><span class="n">geom_abline</span><span class="p">(</span><span class="n">intercept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">1</span><span class="p">],</span><span class="w"> </span><span class="n">slope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">2</span><span class="p">])</span></code></pre></figure>
+
+<p><img src="/figure/source/2016-10-27-reproducible-research/figure-1.png" alt="plot of chunk figure" /></p>
+
+<p>Bu ornekte damaginiza <strong>knitr</strong> kullanimindan bir tat calmayi amacladim.</p>
+
+<p>Benim ugrastigim problemlerde <strong>knitr</strong> in saglamis oldugu cok onemli diger bir fayda ise <em>cache</em> ozelligi. Simdi farz edin ki analiziniz yukaridaki gibi bir simple linear regression degil, mesela simulasyon yapiyorsunuz veya <em>bootstrapping</em>. Dolayisiyla islem saatler surebilir. Bu durumda <strong>knitr</strong> in cache ozelligini kullanabilirsiniz, ilk compilation da analiz yapilir (artik ne kadar suruyorsa) ve <strong>knitr</strong> sizin icin outputu kaydeder. Sonraki compilationlarda ise knitr kaydedilmis outputu kullanir!</p>
+
+<p>Bu arada <strong>knitr</strong>‘i her turlu farkli LaTeX <em>documentclass</em> icin kullanabilirsiniz, mesela rapor yazarken veya sunumunuzu hazirlarken. Diyelim ki sunumunuzdaki bir analizde kucuk bir degisiklik yapmak istiyorsunuz, artik cok kolay ve pratik bir sekilde bunu yapabilirsiniz.</p>
+
+<h2 id="kapanis">Kapanis</h2>
+
+<p>Daha once soyledigim gibi <strong>knitr</strong> bayagi flexible. Mesela LaTeX kullanmak istemiyorsaniz, <strong>R</strong> + <strong>Markdown</strong> + <strong>Rstudio</strong> da gayet guzel bir alternatif sizin icin. Boylece HTML ve ya Word output da elde edebilirsiniz, PDF in yaninda (ozellikle  LaTeX bilmiyorsaniz). Veyahut <strong>R</strong> yerine <strong>Phyton</strong>, <strong>SAS</strong>, <strong>Ruby</strong> kullanabilirsiniz, <strong>Rstudio</strong> yerine <strong>LyX</strong>, <strong>Texmaker</strong> veya <strong>Emacs</strong> kullanabilirsiniz. Fakat bence <strong>Rstudio</strong> dan sasmamak en mantiklisi cunku Rstudio knitr icin <em>build-in support</em> a sahip. Muhtemelen bunun onemli bir nedeni <strong>knitr</strong> in yaraticisinin bir <strong>Rstudio</strong> calisani olmasi. Hepsi ve daha fazlasi icin <a href="http://yihui.name/knitr/"><strong>knitr</strong> in websitesine bakabilirsiniz</a>. Son olarak, bu yazinin kendisi de <strong>knitr</strong> kullanarak reproducible researche bir ornek, source code u yazardan taleb edebilirsiniz.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/12/08/life-expectancy.html">
+            A misunderstanding about life expectancy
+            <small>08 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/12/06/confounding.html">
+            Confounding or the relationship between shoe size and salary
+            <small>06 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/10/26/how-I-got-here.html">
+            How I got here?
+            <small>26 Oct 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+<a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-share-button" data-href="https://gunhanb.github.io/blog/" data-layout="button_count"></div>
+
+
+
+
+<div id="disqus_thread"></div>
+
+<script>(function() {
+        var d = document, s = d.createElement('script');
+        s.src = '//https-gunhanb-github-io-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+    </div>
+
+  </body>
+</html>

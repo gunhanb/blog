@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Burak's Data Blog</title>
+ <link href="https://gunhanb.github.io/blog//atom.xml" rel="self"/>
+ <link href="https://gunhanb.github.io/blog//"/>
+ <updated>2016-12-29T18:21:20+01:00</updated>
+ <id>https://gunhanb.github.io/blog/</id>
+ <author>
+   <name>Burak Kursad Gunhan</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>A misunderstanding about life expectancy</title>
+   <link href="https://gunhanb.github.io/blog//2016/12/08/life-expectancy.html"/>
+   <updated>2016-12-08T00:00:00+01:00</updated>
+   <id>https://gunhanb.github.io/blog//2016/12/08/life-expectancy</id>
+   <content type="html">&lt;p&gt;Here I want to talk about a very common mistake when it comes to &lt;em&gt;life expectancy&lt;/em&gt; and its interpretation. In one of my epidemiology courses, the lecturer showed the below Figure.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-08-life-expectancy/LifeEx.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I am sure you also see graphs like that not this particular one (I mean for Switzerland) but maybe similar. OK, we see a very clear trend that life expectancy increasing in the last century. It was even doubled, right? That’s very nice. And we also see that there is clear difference between men and women but it is not my issue here.&lt;/p&gt;
+
+&lt;p&gt;I am more interested in the increase of the life expectancy. To understand it better first important question is, as always, why. In other words what is the possible &lt;em&gt;explanation&lt;/em&gt;. And second question, what can we guess about the life expectancy of 2100 for example, so the &lt;em&gt;prediction&lt;/em&gt;. My lecturer gave the answer for the first question: the remarkable achievement of &lt;em&gt;modern medicine&lt;/em&gt;. And so by this logic, he said that the life expectancy probably may continue to increase as we had in the last century.&lt;/p&gt;
+
+&lt;p&gt;Now, let’s consider not 1900 but long before, for instance think about our ancestors, hunter gatherers. What we expect is that they may have similar (or even low say 30?) life expectancy like 1900, right? So lets think from a hunter gatherer perspective and see this below Figure for this purpose.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-08-life-expectancy/Foragers.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Our ancestors did not get it why they could not survive after 30. But the achievements of the medicine fully can explain it?&lt;/p&gt;
+
+&lt;p&gt;At this point, to understand better, we need to look at the precise definition of the life expectancy (from Wikipedia):&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The mean length of life of a hypothetical cohort (all individuals born in a given year) assumed to be exposed since birth until death of all their member to the mortality rate observed at a given year.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;OK, the definition seems unnecessarily complicated, but important point is that life expectancy is just a mean. So it is one type of statistical measure. But to gain more insight about the data maybe it is better to look more than just mean values. Unfortunately, I don’t have the real data, so lets just simulate some data for our purpose and plot it:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-08-life-expectancy/plot1-1.png&quot; alt=&quot;plot of chunk plot1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now in the above Figure, you see all data points (the mean length of life bla bla bla &lt;em&gt;per person&lt;/em&gt;) as well as the life expectancy as red crosses (or let’s call it mean values). But the problem is that in reality data do not look like that Figure, but instead more look like the below Figure.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-08-life-expectancy/plot2-1.png&quot; alt=&quot;plot of chunk plot2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So lets compare those two Figures which are based on two different simulated datasets. Firstly the red crosses are exactly has the same values (monotonically increasing from a value close to 40 to a value close to 80). That implies mean values are the same. But in the second Figure, there are many data points very close to zero values. But the second set of data points of each given year (values which are far away to zero) seem to not increasing much. So what does that mean?. Those very small data points corresponding to children who died at very early ages (&lt;em&gt;infant mortality&lt;/em&gt;). And as you can see, with decreasing of the infant mortality, the mean values are going away from zero even if the adult mortality stays constant.&lt;/p&gt;
+
+&lt;p&gt;That means, back then, your expected value of length of life is very low when you are child. But once you reach the adulthood then it is not that low like 30. That’s why even in the times when the life expectancy is 30, you can see many people of high ages like 60.&lt;/p&gt;
+
+&lt;p&gt;OK, I exaggerated a little bit to make the point, and of course the advancement of modern medicine (better medications etc.) is a very important explanation of the increase of life expectancy. But still I think considering only the mean values can be misleading since infant mortality has possibly more effect on the increase of life expectancy.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Confounding or the relationship between shoe size and salary</title>
+   <link href="https://gunhanb.github.io/blog//2016/12/06/confounding.html"/>
+   <updated>2016-12-06T00:00:00+01:00</updated>
+   <id>https://gunhanb.github.io/blog//2016/12/06/confounding</id>
+   <content type="html">&lt;p&gt;There are few terms in the context of statistics which I find very interesting and powerful when I, first, understand it. One of which is, undoubtedly, the concept of &lt;em&gt;confounding&lt;/em&gt;. This term attracted my attention; since, in my opinion, it has potential to explain many mechanisms in different fields when statistical methods are used as tools. As you may imagine, medicine, biology or political science are only some examples for different areas. To explain the confounding, I use following example.&lt;/p&gt;
+
+&lt;h1 id=&quot;a-simple-example&quot;&gt;A simple example&lt;/h1&gt;
+
+&lt;p&gt;Now, assume that we want to examine the association between the salary per month of a person who lives in Zurich city and his or her shoe size. Of course, you may think this example is a silly one, but, I believe, by using such an example, one can understand the confounder term very easily. In order to have some data to analyse, you go to city’s most crowded street and collect data by using a questionnaire. Assume that your questionnaire is valid, you asked 1000 people (enough sample size!), so in short your data is &lt;em&gt;reliable&lt;/em&gt;. Then you want to plot your data so as to see what is going on in the dataset. So, you decided to use a scatterplot, and you get below figure.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-06-confounding/plot1-1.png&quot; alt=&quot;plot of chunk plot1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Moreover, you use simple regression, estimated the regression line and plot it as a superimposed line to the Figure (Of course I did not do any survey, I just simulated data).&lt;/p&gt;
+
+&lt;p&gt;Then, you concluded from this Figure as follows:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There is a strong association between shoe size and salary per month. With increasing shoe size of a person, his or her salary is increasing.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So far, everything seems you correct but still we have a weird conclusion, right? You can understand the underlying problem, when you plot the same data but now using different colors for male and female (luckily you have gender information coming from your questionnaire). And you plot two simple regression lines for female and male separately – you estimated those two lines by using two different subset of data. So we obtained the below Figure.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/source/2016-12-06-confounding/plot2-1.png&quot; alt=&quot;plot of chunk plot2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now our conclusion is changed completely! The &lt;em&gt;effect&lt;/em&gt; vanished, and now we don’t have any evidence suggest that there is an association between shoe size and salary. Our possible conclusion, however, is as follows. Males have substantially larger shoe size than females on average (which has a biological explanation) and also, males has earning more money on average (which is also true indeed). But shoe size has nothing to do with salary for both subset of data! In such a case, &lt;em&gt;gender&lt;/em&gt; is a confounding variable which is mixing the effect. In this scenario, we see an effect which is not there, actually. But in other situations, you can see an effect but you may get the direction wrong.&lt;/p&gt;
+
+&lt;p&gt;These situations are not an extreme cases, especially if you are working with &lt;em&gt;observational&lt;/em&gt; data. Therefore, one should try to eliminate any possible confounders. For example, if you are investigating a health-related issue, age and gender are usual suspects. But at the end of the day, it is very important not to &lt;em&gt;overinterpret&lt;/em&gt; the results in case of any confounders.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Nasıl "reproducible research" yaparım?</title>
+   <link href="https://gunhanb.github.io/blog//2016/10/27/reproducible-research.html"/>
+   <updated>2016-10-27T00:00:00+02:00</updated>
+   <id>https://gunhanb.github.io/blog//2016/10/27/reproducible-research</id>
+   <content type="html">&lt;p&gt;Diyelim ki bir arkadaşınız yaklaşık bir sene önce tamamlamış olduğunuz bir &lt;em&gt;research&lt;/em&gt; calışmanızdan birşey sordu. Calısmanıza dönüp analizleri tekrar gözden geçirmek, tablo ve figürleri &lt;em&gt;reproduce&lt;/em&gt; edebilmeniz ne kadar vaktinizi alacaktır? Veya arkadaşınızı boşverin, sadece kendiniz 2 sene önce hazırlamış olduğunuz sunumdaki &lt;em&gt;result&lt;/em&gt;larin tekrar elde etmeye calışsanız? Bu süreyi ve olası zahmeti azaltmanın (ve daha fazlası) metodu &lt;em&gt;reproducible research&lt;/em&gt; yapmanız!&lt;/p&gt;
+
+&lt;p&gt;Eğer günlük hayattaki calışmalarınızda bir sekilde &lt;em&gt;data analysis&lt;/em&gt; yapıyorsaniz, eski yontemler yerine &lt;em&gt;reproducible research&lt;/em&gt; kullanmaniz belki biraz daha zahmetli ama uzun vadede kesinlikle daha faydali.&lt;/p&gt;
+
+&lt;p&gt;Bir başka açıdan bakacak olursak, geleneksel rapor yazımında, sonuçları bir software de hesaplayip, sonra da hesaplamış oldugumuz sayılari elle sonuç bölümüne yazarız. Ama bu yöntem reproducible değil, data &lt;em&gt;software&lt;/em&gt; e bağlı fakat sonuçlar yazdıgımız metne bağlı değil, dolayısıyla hata yapma ihtimali bir hayli yüksek.&lt;/p&gt;
+
+&lt;p&gt;Bu konu tabiiki bayağı geniş ve kapsamlı, ayrica niyetim bir &lt;em&gt;manual&lt;/em&gt; yazmak değil. Bu yazıda amacım kendi tecrübelerimden faydalanarak tamamen pratik açıdan reproducible research’u kısaca anlatmaya calişmak (&lt;a href=&quot;http://reproducibleresearch.net&quot;&gt;daha ayrıntılı bilgi için tıklayin&lt;/a&gt;). Turkce yazmamın amacı da bu konulardaki Türkçe materyallerin eksikliği.&lt;/p&gt;
+
+&lt;p&gt;Ilk olarak data analysis’i hangi &lt;em&gt;software&lt;/em&gt; de yapacagim sorusu karsimiza geliyor. Bir istatistikci oldugum icin buna verecegim cevap tabiki &lt;a href=&quot;https://www.r-project.org&quot;&gt;&lt;strong&gt;R&lt;/strong&gt;&lt;/a&gt; (since &lt;strong&gt;R&lt;/strong&gt; is made by statisticians for statisticians!). Ikinci olarak &lt;em&gt;typesetting&lt;/em&gt; programimizi belirlememiz gerekiyor, raporu/makaleyi/tezi yazacagimiz veya sunumu hazirlayacagimiz program. Buna cevabimiz ise &lt;em&gt;LaTeX&lt;/em&gt; olabilir. Fakat diger guclu bir alternatif ise &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;&lt;em&gt;Markdown&lt;/em&gt;&lt;/a&gt;. Markdown ile hem pdf, word veya HTML output elde edebiliyoruz. Bu yazida &lt;em&gt;Markdown&lt;/em&gt; kullanacagiz, cünkü bize
+Ve ucuncu olarak bize uygun bir &lt;em&gt;text editor&lt;/em&gt; gerekli, bunun icin de &lt;strong&gt;Rstudio&lt;/strong&gt; yu kullaniyoruz. Sonunda sihirli dokunusu yapacak yani reproducible research u mumkun kilacak olan program (aslinda bir &lt;strong&gt;R&lt;/strong&gt; &lt;em&gt;package&lt;/em&gt;): &lt;strong&gt;knitr&lt;/strong&gt;. Tam burada &lt;strong&gt;knitr&lt;/strong&gt; in babasi olan programi hatirlatmam gerekiyor, saygi geregi &lt;strong&gt;Sweave&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Dolayisiyla &lt;strong&gt;knitr&lt;/strong&gt; ile birlikte bu uc program, &lt;strong&gt;R&lt;/strong&gt; + Markdown + &lt;strong&gt;Rstudio&lt;/strong&gt;, bize reproducible research yapabilmemiz icin yeterli ve bu arada hepsi de free software. Kisacasi bir tek &lt;em&gt;document&lt;/em&gt; a hem LaTeX kodu hem de &lt;strong&gt;R&lt;/strong&gt; kodunu yaziyorsunuz (.Rmd file) ve sonrasinda &lt;em&gt;compile&lt;/em&gt; edip PDF inize kavusmus oluyorsunuz. Aslina bakarsaniz, &lt;strong&gt;knitr&lt;/strong&gt; kullanarak reproducible research yapabilmemiz icin bu uc programin hicbiri farz degil, alternatif kombinasyonlara en sonda deginecegim. Rstudio nun sagladigi en onemli fayda ise &lt;em&gt;compile to PDF&lt;/em&gt; adimini sadece tek bir tusa indirgiyor olusu.&lt;/p&gt;
+
+&lt;h2 id=&quot;basit-bir-ornek&quot;&gt;Basit bir ornek&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Base R&lt;/em&gt; dan &lt;em&gt;cars&lt;/em&gt; adli &lt;em&gt;dataset&lt;/em&gt; i kullanacagiz. Bu dataset farkli arabalarin hizlari (&lt;em&gt;speed variable&lt;/em&gt;) ve her bir arabanin durmak icin gerekli mesafelerini (&lt;em&gt;dist variable&lt;/em&gt;) iceriyor. Bu datayi analiz etmek icin &lt;em&gt;linear regression&lt;/em&gt; kullaniyoruz ve gerekli &lt;strong&gt;R&lt;/strong&gt; kodu asagidaki gibi gosterebiliriz.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linear&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;regression&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Tabii sonuclari -mesela bu ornekte &lt;em&gt;coefficients&lt;/em&gt;- bir tabloda gostermek isteyebiliriz. Bunun icin de &lt;strong&gt;xtable&lt;/strong&gt; (bir &lt;strong&gt;R&lt;/strong&gt; package) bize yardimci olacak. Asagidaki &lt;strong&gt;R&lt;/strong&gt; kodu bize gerekli HTML kodu veriyor, ve compile ettikten sonra da Tablo 1’i elde ediyoruz.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;knitr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coefs&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rownames&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coefs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Intercept&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;speed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coefs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tab:coefs&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digits&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row.names&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+      &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;col.names&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Estimate&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Estimate&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Intercept&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;-17.58&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;speed&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;3.93&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Normal sartlarda tabloyu yaratan &lt;strong&gt;R&lt;/strong&gt; kodu okuyucuya gostermeye gerek yok fakat ben ornek olmasi acisindan gosteriyorum.&lt;/p&gt;
+
+&lt;p&gt;Simdi ise &lt;em&gt;data visualization&lt;/em&gt;. Asagidaki &lt;strong&gt;R&lt;/strong&gt; kod ile Figure 1’i elde ediyoruz.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ggplot2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ggplot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cars&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;aes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;speed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom_point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; 
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;geom_abline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;intercept&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;slope&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figure/source/2016-10-27-reproducible-research/figure-1.png&quot; alt=&quot;plot of chunk figure&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Bu ornekte damaginiza &lt;strong&gt;knitr&lt;/strong&gt; kullanimindan bir tat calmayi amacladim.&lt;/p&gt;
+
+&lt;p&gt;Benim ugrastigim problemlerde &lt;strong&gt;knitr&lt;/strong&gt; in saglamis oldugu cok onemli diger bir fayda ise &lt;em&gt;cache&lt;/em&gt; ozelligi. Simdi farz edin ki analiziniz yukaridaki gibi bir simple linear regression degil, mesela simulasyon yapiyorsunuz veya &lt;em&gt;bootstrapping&lt;/em&gt;. Dolayisiyla islem saatler surebilir. Bu durumda &lt;strong&gt;knitr&lt;/strong&gt; in cache ozelligini kullanabilirsiniz, ilk compilation da analiz yapilir (artik ne kadar suruyorsa) ve &lt;strong&gt;knitr&lt;/strong&gt; sizin icin outputu kaydeder. Sonraki compilationlarda ise knitr kaydedilmis outputu kullanir!&lt;/p&gt;
+
+&lt;p&gt;Bu arada &lt;strong&gt;knitr&lt;/strong&gt;‘i her turlu farkli LaTeX &lt;em&gt;documentclass&lt;/em&gt; icin kullanabilirsiniz, mesela rapor yazarken veya sunumunuzu hazirlarken. Diyelim ki sunumunuzdaki bir analizde kucuk bir degisiklik yapmak istiyorsunuz, artik cok kolay ve pratik bir sekilde bunu yapabilirsiniz.&lt;/p&gt;
+
+&lt;h2 id=&quot;kapanis&quot;&gt;Kapanis&lt;/h2&gt;
+
+&lt;p&gt;Daha once soyledigim gibi &lt;strong&gt;knitr&lt;/strong&gt; bayagi flexible. Mesela LaTeX kullanmak istemiyorsaniz, &lt;strong&gt;R&lt;/strong&gt; + &lt;strong&gt;Markdown&lt;/strong&gt; + &lt;strong&gt;Rstudio&lt;/strong&gt; da gayet guzel bir alternatif sizin icin. Boylece HTML ve ya Word output da elde edebilirsiniz, PDF in yaninda (ozellikle  LaTeX bilmiyorsaniz). Veyahut &lt;strong&gt;R&lt;/strong&gt; yerine &lt;strong&gt;Phyton&lt;/strong&gt;, &lt;strong&gt;SAS&lt;/strong&gt;, &lt;strong&gt;Ruby&lt;/strong&gt; kullanabilirsiniz, &lt;strong&gt;Rstudio&lt;/strong&gt; yerine &lt;strong&gt;LyX&lt;/strong&gt;, &lt;strong&gt;Texmaker&lt;/strong&gt; veya &lt;strong&gt;Emacs&lt;/strong&gt; kullanabilirsiniz. Fakat bence &lt;strong&gt;Rstudio&lt;/strong&gt; dan sasmamak en mantiklisi cunku Rstudio knitr icin &lt;em&gt;build-in support&lt;/em&gt; a sahip. Muhtemelen bunun onemli bir nedeni &lt;strong&gt;knitr&lt;/strong&gt; in yaraticisinin bir &lt;strong&gt;Rstudio&lt;/strong&gt; calisani olmasi. Hepsi ve daha fazlasi icin &lt;a href=&quot;http://yihui.name/knitr/&quot;&gt;&lt;strong&gt;knitr&lt;/strong&gt; in websitesine bakabilirsiniz&lt;/a&gt;. Son olarak, bu yazinin kendisi de &lt;strong&gt;knitr&lt;/strong&gt; kullanarak reproducible researche bir ornek, source code u yazardan taleb edebilirsiniz.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How I got here?</title>
+   <link href="https://gunhanb.github.io/blog//2016/10/26/how-I-got-here.html"/>
+   <updated>2016-10-26T00:00:00+02:00</updated>
+   <id>https://gunhanb.github.io/blog//2016/10/26/how-I-got-here</id>
+   <content type="html">&lt;p&gt;As someone with zero experience writing blogpost etc., &lt;a href=&quot;https://github.com/yihui/knitr-jekyll&quot;&gt;Yihui Xie’s minimal example&lt;/a&gt; and &lt;a href=&quot;http://statistics.rainandrhino.org/knitr-hyde/2015/12/12/sample-post.html&quot;&gt;this sample blog&lt;/a&gt; helped me a lot to start blogging. Normally, it can be quite tedious to work with a Jekyll-based blog for someone like me. However, Yihui’s servr R package facilitate how to build a &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; website which uses &lt;a href=&quot;yihui.name/knitr/&quot;&gt;knitr&lt;/a&gt; and Rmarkdown. By the way, I wanted to use Jekyll because I want to include R code to my blog posts. Also, I was lucky and I had experience with knitr and Rmarkdown before. Finally, with the help of Rstudio, the road for blogging with Jekyll is open for many more R users, I believe!&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>

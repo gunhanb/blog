@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A misunderstanding about life expectancy &middot; Burak's Data Blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/custom.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  
+  <!-- Mathjax -->
+  <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+    <!--Disqus comment counts-->
+    <script id="dsq-count-scr" src="//https-gunhanb-github-io-blog.disqus.com/count.js" async></script>
+    
+</head>
+
+
+  <body class="theme-base-0b">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="">
+          Burak's Data Blog
+        </a>
+      </h1>
+      <p class="lead">This is just another blog about statistics, R and data science etc.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about.html">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/archive.html">Archives</a>
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/categories.html">Categories</a>
+          
+        
+      
+        
+          
+        
+      
+      <a class="sidebar-nav-item" href="https://github.com/gunhanb/blog">GitHub project</a>
+    </nav>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">A misunderstanding about life expectancy</h1>
+  <span class="post-date">08 Dec 2016</span>
+  <p>Here I want to talk about a very common mistake when it comes to <em>life expectancy</em> and its interpretation. In one of my epidemiology courses, the lecturer showed the below Figure.</p>
+
+<p><img src="/figure/source/2016-12-08-life-expectancy/LifeEx.png" alt="" /></p>
+
+<p>I am sure you also see graphs like that not this particular one (I mean for Switzerland) but maybe similar. OK, we see a very clear trend that life expectancy increasing in the last century. It was even doubled, right? That’s very nice. And we also see that there is clear difference between men and women but it is not my issue here.</p>
+
+<p>I am more interested in the increase of the life expectancy. To understand it better first important question is, as always, why. In other words what is the possible <em>explanation</em>. And second question, what can we guess about the life expectancy of 2100 for example, so the <em>prediction</em>. My lecturer gave the answer for the first question: the remarkable achievement of <em>modern medicine</em>. And so by this logic, he said that the life expectancy probably may continue to increase as we had in the last century.</p>
+
+<p>Now, let’s consider not 1900 but long before, for instance think about our ancestors, hunter gatherers. What we expect is that they may have similar (or even low say 30?) life expectancy like 1900, right? So lets think from a hunter gatherer perspective and see this below Figure for this purpose.</p>
+
+<p><img src="/figure/source/2016-12-08-life-expectancy/Foragers.png" alt="" /></p>
+
+<p>Our ancestors did not get it why they could not survive after 30. But the achievements of the medicine fully can explain it?</p>
+
+<p>At this point, to understand better, we need to look at the precise definition of the life expectancy (from Wikipedia):</p>
+
+<blockquote>
+  <p>The mean length of life of a hypothetical cohort (all individuals born in a given year) assumed to be exposed since birth until death of all their member to the mortality rate observed at a given year.</p>
+</blockquote>
+
+<p>OK, the definition seems unnecessarily complicated, but important point is that life expectancy is just a mean. So it is one type of statistical measure. But to gain more insight about the data maybe it is better to look more than just mean values. Unfortunately, I don’t have the real data, so lets just simulate some data for our purpose and plot it:</p>
+
+<p><img src="/figure/source/2016-12-08-life-expectancy/plot1-1.png" alt="plot of chunk plot1" /></p>
+
+<p>Now in the above Figure, you see all data points (the mean length of life bla bla bla <em>per person</em>) as well as the life expectancy as red crosses (or let’s call it mean values). But the problem is that in reality data do not look like that Figure, but instead more look like the below Figure.</p>
+
+<p><img src="/figure/source/2016-12-08-life-expectancy/plot2-1.png" alt="plot of chunk plot2" /></p>
+
+<p>So lets compare those two Figures which are based on two different simulated datasets. Firstly the red crosses are exactly has the same values (monotonically increasing from a value close to 40 to a value close to 80). That implies mean values are the same. But in the second Figure, there are many data points very close to zero values. But the second set of data points of each given year (values which are far away to zero) seem to not increasing much. So what does that mean?. Those very small data points corresponding to children who died at very early ages (<em>infant mortality</em>). And as you can see, with decreasing of the infant mortality, the mean values are going away from zero even if the adult mortality stays constant.</p>
+
+<p>That means, back then, your expected value of length of life is very low when you are child. But once you reach the adulthood then it is not that low like 30. That’s why even in the times when the life expectancy is 30, you can see many people of high ages like 60.</p>
+
+<p>OK, I exaggerated a little bit to make the point, and of course the advancement of modern medicine (better medications etc.) is a very important explanation of the increase of life expectancy. But still I think considering only the mean values can be misleading since infant mortality has possibly more effect on the increase of life expectancy.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/12/06/confounding.html">
+            Confounding or the relationship between shoe size and salary
+            <small>06 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/10/27/reproducible-research.html">
+            Nasıl "reproducible research" yaparım?
+            <small>27 Oct 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/10/26/how-I-got-here.html">
+            How I got here?
+            <small>26 Oct 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+<a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-share-button" data-href="https://gunhanb.github.io/blog/" data-layout="button_count"></div>
+
+
+
+
+<div id="disqus_thread"></div>
+
+<script>(function() {
+        var d = document, s = d.createElement('script');
+        s.src = '//https-gunhanb-github-io-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+    </div>
+
+  </body>
+</html>

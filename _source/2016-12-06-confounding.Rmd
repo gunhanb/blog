@@ -1,6 +1,14 @@
 ---
 layout: post
 title: Confounding or the relationship between shoe size and salary
+comments: true
+published: true
+date: 2016-12-06
+categories: Statistics, epidemiology
+output:
+  html_document:
+    mathjax:  default
+    fig_caption:  true
 ---
 
 

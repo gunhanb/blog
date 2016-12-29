@@ -1,6 +1,15 @@
 ---
 layout: post
 title: Nasıl "reproducible research" yaparım?
+comments: true
+published: true
+date: 2016-10-27
+categories: R, turkish
+output:
+  html_document:
+    mathjax:  default
+    fig_caption:  true
+
 ---
 
 
