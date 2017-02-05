@@ -4,7 +4,7 @@
  <title>Burak's Data Blog</title>
  <link href="https://gunhanb.github.io/blog///blogatom.xml" rel="self"/>
  <link href="https://gunhanb.github.io/blog///blog"/>
- <updated>2017-02-05T21:49:31+01:00</updated>
+ <updated>2017-02-05T21:53:16+01:00</updated>
  <id>https://gunhanb.github.io/blog/</id>
  <author>
    <name>Burak Kürsad Günhan</name>
@@ -27,7 +27,7 @@
 
 &lt;p&gt;Therefore an average person is more likely die from falling off a bed or chair compared to plane crashes. Following this logic, should we fear more from dying when we go to sleep than a plane trip? This seems awkward, right? Now let’s take a closer look to the numbers.&lt;/p&gt;
 
-&lt;p&gt;If we assume there are 7.5 billion people in the world, that means annually $(7.5 * 10^9) / (11 * 10^6) = 681$ people are killed by plane crashes (according to &lt;a href=&quot;http://www.travelstart.co.za/blog/6-ridiculous-things-more-likely-to-kill-you-than-a-plane-crash/&quot;&gt;same article above&lt;/a&gt;). This looks reasonable when we look at some original sources like &lt;a href=&quot;http://www.ibtimes.com/how-many-planes-crash-every-year-how-many-people-die-plane-crashes-chart-1560554&quot;&gt;this&lt;/a&gt;, and a nice figure from the same source is shown below.&lt;/p&gt;
+&lt;p&gt;If we assume there are 7.5 billion people in the world, that means annually &lt;script type=&quot;math/tex&quot;&gt;(7.5 * 10^9) / (11 * 10^6) = 681&lt;/script&gt; people are killed by plane crashes (according to &lt;a href=&quot;http://www.travelstart.co.za/blog/6-ridiculous-things-more-likely-to-kill-you-than-a-plane-crash/&quot;&gt;same article above&lt;/a&gt;). This looks reasonable when we look at some original sources like &lt;a href=&quot;http://www.ibtimes.com/how-many-planes-crash-every-year-how-many-people-die-plane-crashes-chart-1560554&quot;&gt;this&lt;/a&gt;, and a nice figure from the same source is shown below.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/blog/figure/source/2016-02-05-probability-of-dying/plane_crashes.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 

@@ -20,7 +20,7 @@ Now, let's think about the claims of such stuff more, for example the comparison
 
 Therefore an average person is more likely die from falling off a bed or chair compared to plane crashes. Following this logic, should we fear more from dying when we go to sleep than a plane trip? This seems awkward, right? Now let's take a closer look to the numbers.
 
-If we assume there are 7.5 billion people in the world, that means annually $(7.5 * 10^9) / (11 * 10^6) = 681$ people are killed by plane crashes (according to [same article above](http://www.travelstart.co.za/blog/6-ridiculous-things-more-likely-to-kill-you-than-a-plane-crash/)). This looks reasonable when we look at some original sources like [this](http://www.ibtimes.com/how-many-planes-crash-every-year-how-many-people-die-plane-crashes-chart-1560554), and a nice figure from the same source is shown below.
+If we assume there are 7.5 billion people in the world, that means annually $$(7.5 * 10^9) / (11 * 10^6) = 681$$ people are killed by plane crashes (according to [same article above](http://www.travelstart.co.za/blog/6-ridiculous-things-more-likely-to-kill-you-than-a-plane-crash/)). This looks reasonable when we look at some original sources like [this](http://www.ibtimes.com/how-many-planes-crash-every-year-how-many-people-die-plane-crashes-chart-1560554), and a nice figure from the same source is shown below.
 
 ![](/blog/figure/source/2016-02-05-probability-of-dying/plane_crashes.png)
 
