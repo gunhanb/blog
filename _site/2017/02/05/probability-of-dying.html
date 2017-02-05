@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Plane crashes and household furnitures &middot; Burak's Data Blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/public/css/poole.css">
+  <link rel="stylesheet" href="/blog/public/css/syntax.css">
+  <link rel="stylesheet" href="/blog/public/css/hyde.css">
+  <link rel="stylesheet" href="/blog/public/css/custom.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blogpublic/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/blogpublic/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  
+  <!-- Mathjax -->
+  <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+    <!--Disqus comment counts-->
+    <script id="dsq-count-scr" src="//https-gunhanb-github-io-blog.disqus.com/count.js" async></script>
+    
+</head>
+
+
+  <body class="theme-base-0b">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/blog">
+          Burak's Data Blog
+        </a>
+      </h1>
+      <p class="lead">This is just another blog about statistics, R and data science etc.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/blog">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/blog/about.html">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/blog/archive.html">Archives</a>
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/blog/categories.html">Categories</a>
+          
+        
+      
+        
+          
+        
+      
+      <a class="sidebar-nav-item" href="https://github.com/gunhanb/blog">GitHub project</a>
+    </nav>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Plane crashes and household furnitures</h1>
+  <span class="post-date">05 Feb 2017</span>
+  <p>You may wonder what connects the plane crashes to household furnitures, right? In both of those situations, there is a probability of dying attached to them. Maybe you already read stuff like <a href="https://www.buzzfeed.com/staceyc5/6-things-more-likely-to-kill-you-than-a-plane-cras-4mkq?utm_term=.dx2zd0Lxm#.lim0Kj4dQ">6 Things More Likely To Kill You Than A Plane Crash</a> or <a href="http://www.travelstart.co.za/blog/6-ridiculous-things-more-likely-to-kill-you-than-a-plane-crash/">this</a>. You may see such news after a plane crash occurred in the world, and basically their take home message is that plane crashes is not that common as we might normally think. OK, this we may already know. But the author of such articles misses an important point which is very nicely explained by <a href="http://www.forbes.com/sites/alexknapp/2015/09/23/what-mashable-gets-wrong-about-shark-attacks-and-selfies/#4ff5b554c4b9">this Forbes article</a>, and I will try to elaborate in this post.</p>
+
+<p>Now, let’s think about the claims of such stuff more, for example the comparison of dying by a plane crash and by a household furniture (for instance falling from a bed). In <a href="http://www.travelstart.co.za/blog/6-ridiculous-things-more-likely-to-kill-you-than-a-plane-crash/">this article</a>, it is written that the odds dying from plane crash is 1 in 11 million. And than they conclude the following statement</p>
+
+<blockquote>
+  <p>Your bed is not your friend. Next time you have a nap remember there is a 1 in 2 million chance of dying from falling off a bed or chair!</p>
+</blockquote>
+
+<p>Therefore an average person is more likely die from falling off a bed or chair compared to plane crashes. Following this logic, should we fear more from dying when we go to sleep than a plane trip? This seems awkward, right? Now let’s take a closer look to the numbers.</p>
+
+<p>If we assume there are 7.5 billion people in the world, that means annually <script type="math/tex">(7.5 * 10^9) / (11 * 10^6) = 681</script> people are killed by plane crashes (according to <a href="http://www.travelstart.co.za/blog/6-ridiculous-things-more-likely-to-kill-you-than-a-plane-crash/">same article above</a>). This looks reasonable when we look at some original sources like <a href="http://www.ibtimes.com/how-many-planes-crash-every-year-how-many-people-die-plane-crashes-chart-1560554">this</a>, and a nice figure from the same source is shown below.</p>
+
+<p><img src="/blog/figure/source/2016-02-05-probability-of-dying/plane_crashes.png" alt="" /></p>
+
+<p>On the other hand, annually <script type="math/tex">(7.5 * 10^9) / (2 * 10^6) = 3750</script> people are killed by household furniture (if we believe their numbers). Therefore, if we compare <em>absolute</em> risks, then household furniture are more dangerous. But what’s more relevant is actually <em>relative</em> risks rather than absolute risks. This is because you go to bed far more times than you use an air plane annually, right? Now let’s calculate some (very) crude relative risks to compare.</p>
+
+<p>According to <a href="http://www.iata.org/pressroom/pr/Pages/2012-12-06-01.aspx">this source</a>, 3.6 million passengers were used airplanes worldwide in 2016. So 681 deaths from 3.6 million, then relative risk is <script type="math/tex">681 / (3.6 * 10^9) = 1890 / 10^{10}</script>. I don’t have a source for how many times people go to bed or sit on a chair annualy, but assume that any person goes 0.75 times (of course I made this number up) to bed (or chair) everyday. That means 3750 deaths from <script type="math/tex">5.625 * 10^6 * 365</script>, so relative risk is <script type="math/tex">3750 / (5.625 * 10^9 * 365) = 18 / 10^{10}</script>. Therefore, our conclusion is that</p>
+
+<blockquote>
+  <p>Don’t afraid when you go to sleep even if some article says otherwise. Next time you have a nap remember the relative risk of of dying from falling off a bed or chair is 18 in 10 billion. And this is almost 105 times lower compared to dying by a plane crash.</p>
+</blockquote>
+
+<p>Now, let’s think about the drowning in a bath. Our very same source says that the chance of drowning in a bath is 1 in 685,000. And if we assume that an average person use bath 0.5 times everyday (of course I don’t know any exact number). Then the relative risk is that <script type="math/tex">10948 / (3.75 * 10^9 * 365) = 80 / 10^{10}</script></p>
+
+<p>OK, this may also have lower relative risk compared to plane crashes, but still maybe close right? This looks strange to me. Then I have found this <a href="http://blogs.wsj.com/japanrealtime/2016/01/22/deaths-from-drowning-in-bathtubs-up-70-in-10-years-report/">WSJ article</a> which says that in 2014, 4.866 people drowned to death in a bathtub at households in Japan. This is just too much. But they also says that 9 out of 10 involving those aged 65 or older. So this is exactly the very meaning of confounding (as I explained it in a <a href="https://gunhanb.github.io/blog//2016/12/06/confounding.html">previous post</a>), I guess age is also an important confounding factor for dying by falling from a bed, but presumably not for dying by a plane crash. If we put it like the Turkish comedian <a href="odds of dying plane train">Cem Yilmaz</a> says, when the plane crashes, it does not matter whether your are in business class or not.</p>
+
+<p>Lastly, if we look from completely different perspective, maybe all of those comparisons can be seen as redundant. Because you don’t go to bed or sit a chair as an alternative to use an airplane, right? I mean, taking bath in a bathtub is not a way of transportation, of course. And when we compare different ways of transportation, then without a doubt planes are the most safest.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2016/12/08/life-expectancy.html">
+            A misunderstanding about life expectancy
+            <small>08 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/12/06/confounding.html">
+            Confounding or the relationship between shoe size and salary
+            <small>06 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/10/27/reproducible-research.html">
+            Nasıl "reproducible research" yaparım?
+            <small>27 Oct 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+<a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-share-button" data-href="https://gunhanb.github.io/blog//blog" data-layout="button_count"></div>
+
+
+
+
+<div id="disqus_thread"></div>
+
+<script>(function() {
+        var d = document, s = d.createElement('script');
+        s.src = '//https-gunhanb-github-io-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+    </div>
+
+  </body>
+</html>

@@ -33,8 +33,7 @@ twitter:          true # add a twitter button to each post
 facebook:         true # add a facebook share button to each post
 
 author:
-  name:           'Burak Kursad Gunhan'
-#  url:            https://statistics.rainandrhino.org
+  name:           'Burak Kürsad Günhan'
 
 github:
   repo:           https://github.com/gunhanb/blog
