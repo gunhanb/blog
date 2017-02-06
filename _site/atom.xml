@@ -4,7 +4,7 @@
  <title>Burak's Data Blog</title>
  <link href="https://gunhanb.github.io/blog///blogatom.xml" rel="self"/>
  <link href="https://gunhanb.github.io/blog///blog"/>
- <updated>2017-02-05T21:53:16+01:00</updated>
+ <updated>2017-02-06T18:41:21+01:00</updated>
  <id>https://gunhanb.github.io/blog/</id>
  <author>
    <name>Burak Kürsad Günhan</name>
@@ -17,7 +17,10 @@
    <link href="https://gunhanb.github.io/blog//2017/02/05/probability-of-dying.html"/>
    <updated>2017-02-05T21:00:00+01:00</updated>
    <id>https://gunhanb.github.io/blog//2017/02/05/probability-of-dying</id>
-   <content type="html">&lt;p&gt;You may wonder what connects the plane crashes to household furnitures, right? In both of those situations, there is a probability of dying attached to them. Maybe you already read stuff like &lt;a href=&quot;https://www.buzzfeed.com/staceyc5/6-things-more-likely-to-kill-you-than-a-plane-cras-4mkq?utm_term=.dx2zd0Lxm#.lim0Kj4dQ&quot;&gt;6 Things More Likely To Kill You Than A Plane Crash&lt;/a&gt; or &lt;a href=&quot;http://www.travelstart.co.za/blog/6-ridiculous-things-more-likely-to-kill-you-than-a-plane-crash/&quot;&gt;this&lt;/a&gt;. You may see such news after a plane crash occurred in the world, and basically their take home message is that plane crashes is not that common as we might normally think. OK, this we may already know. But the author of such articles misses an important point which is very nicely explained by &lt;a href=&quot;http://www.forbes.com/sites/alexknapp/2015/09/23/what-mashable-gets-wrong-about-shark-attacks-and-selfies/#4ff5b554c4b9&quot;&gt;this Forbes article&lt;/a&gt;, and I will try to elaborate in this post.&lt;/p&gt;
+   <content type="html">&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;You may wonder what connects the plane crashes to household furnitures, right? In both of those situations, there is a probability of dying attached to them. Maybe you already read stuff like &lt;a href=&quot;https://www.buzzfeed.com/staceyc5/6-things-more-likely-to-kill-you-than-a-plane-cras-4mkq?utm_term=.dx2zd0Lxm#.lim0Kj4dQ&quot;&gt;6 Things More Likely To Kill You Than A Plane Crash&lt;/a&gt; or &lt;a href=&quot;http://www.travelstart.co.za/blog/6-ridiculous-things-more-likely-to-kill-you-than-a-plane-crash/&quot;&gt;this&lt;/a&gt;. You may see such news after a plane crash occurred in the world, and basically their take home message is that plane crashes is not that common as we might normally think. OK, this we may already know. But the author of such articles misses an important point which is very nicely explained by &lt;a href=&quot;http://www.forbes.com/sites/alexknapp/2015/09/23/what-mashable-gets-wrong-about-shark-attacks-and-selfies/#4ff5b554c4b9&quot;&gt;this Forbes article&lt;/a&gt;, and I will try to elaborate in this post.&lt;/p&gt;
 
 &lt;p&gt;Now, let’s think about the claims of such stuff more, for example the comparison of dying by a plane crash and by a household furniture (for instance falling from a bed). In &lt;a href=&quot;http://www.travelstart.co.za/blog/6-ridiculous-things-more-likely-to-kill-you-than-a-plane-crash/&quot;&gt;this article&lt;/a&gt;, it is written that the odds dying from plane crash is 1 in 11 million. And than they conclude the following statement&lt;/p&gt;
 

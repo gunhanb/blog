@@ -11,6 +11,9 @@ output:
     mathjax:  default
     fig_caption:  true
 ---
+<script type="text/javascript" async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 You may wonder what connects the plane crashes to household furnitures, right? In both of those situations, there is a probability of dying attached to them. Maybe you already read stuff like [6 Things More Likely To Kill You Than A Plane Crash](https://www.buzzfeed.com/staceyc5/6-things-more-likely-to-kill-you-than-a-plane-cras-4mkq?utm_term=.dx2zd0Lxm#.lim0Kj4dQ) or [this](http://www.travelstart.co.za/blog/6-ridiculous-things-more-likely-to-kill-you-than-a-plane-crash/). You may see such news after a plane crash occurred in the world, and basically their take home message is that plane crashes is not that common as we might normally think. OK, this we may already know. But the author of such articles misses an important point which is very nicely explained by [this Forbes article](http://www.forbes.com/sites/alexknapp/2015/09/23/what-mashable-gets-wrong-about-shark-attacks-and-selfies/#4ff5b554c4b9), and I will try to elaborate in this post.   
 
