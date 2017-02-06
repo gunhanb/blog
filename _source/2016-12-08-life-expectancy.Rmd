@@ -12,6 +12,7 @@ output:
     fig_caption:  true
 ---
 
+
 Here I want to talk about a very common mistake when it comes to *life expectancy* and its interpretation. In one of my epidemiology courses, the lecturer showed the below Figure. 
 
 ![](/blog/figure/source/2016-12-08-life-expectancy/LifeEx.png)
