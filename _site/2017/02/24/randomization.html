@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The art of randomization &middot; Burak's Data Blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/blog/public/css/poole.css">
+  <link rel="stylesheet" href="/blog/public/css/syntax.css">
+  <link rel="stylesheet" href="/blog/public/css/hyde.css">
+  <link rel="stylesheet" href="/blog/public/css/custom.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blogpublic/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/blogpublic/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  
+  <!-- Mathjax -->
+  <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+    <!--Disqus comment counts-->
+    <script id="dsq-count-scr" src="//https-gunhanb-github-io-blog.disqus.com/count.js" async></script>
+    
+</head>
+
+
+  <body class="theme-base-0b">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/blog">
+          Burak's Data Blog
+        </a>
+      </h1>
+      <p class="lead">This is just another blog about statistics, R and data science etc.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/blog">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/blog/about.html">About</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/blog/archive.html">Archives</a>
+          
+        
+      
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/blog/blogroll.html">Blogroll</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/blog/categories.html">Categories</a>
+          
+        
+      
+        
+          
+        
+      
+      <a class="sidebar-nav-item" href="https://github.com/gunhanb/blog">GitHub project</a>
+    </nav>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">The art of randomization</h1>
+  <span class="post-date">24 Feb 2017</span>
+  <script type="text/javascript" async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<p>We all know that drugs are used as treatments for diseases, right? But did you think about how, scientifically, it is shown that drugs actually benefits and but not harms? Before my biostats education, I was naively imagining that since we know what causes the disease and which part of the body it affects etc., scientist are producing chemicals to cure the diseases. But, of course, this was so naive and human body is so complicated, and mostly we don’t know even the causes of the diseases. Then, I learned that, <em>clinical studies</em> are conducted to show whether a drug works or not.</p>
+
+<p>Let`s imagine that if anybody who developed a disease die without exception (in other words outcome of disease is <em>invariable</em>). Then, if we give our drug to one diseased person, and to see that he/she lives, that would be an indication for the value of drug. But we know that the outcome of disease, patients and their reaction to drugs are all vary.</p>
+
+<p>So, we need to give the drug to many patients, and then analyse the results. But do we need a representative sample of the patients from whole population (for example from one country) to obtain unbiased results? Finding such people would be very hard. But still, let say we found 100 people who are representative, and give them drugs. By the way, let assume that our aim is reducing the blood pressure, so we took the number of diastolic blood pressure from 100 people before they receive the drug (<em>baseline</em>) and after they receive it (<em>follow-up</em>). So, below figure is the difference of the number of diastolic blood pressure from baseline to follow-up:</p>
+
+<p><img src="/blog/figure/source/2017-02-24-randomization/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1" /></p>
+
+<p>OK, results are almost all negative, that means blood pressure is decreasing (which was our aim), so we can conclude that drug works, right? Actually, no. The thing is although patients are recovered, <strong>we don’t know which of the patients who recover do so because of the drug or because they would have done so anyway</strong>. Therefore, we need another 100 patients who enter the clinical trial but do not take the drug: so-called <em>control</em> group (<em>treatment</em> group was the first one). Here, an important point is that the baseline of the treatment group and control group should be similar, otherwise the results may depend on the baseline, that mean we won`t get any reliable results.</p>
+
+<p>One way to get comparable groups is that taking two representative samples from whole population, and making one group treatment group and the other control group. But this is way more costly and hard.</p>
+
+<p>Another option is the <em>randomization</em>. If there are 200 patients who are eligible to enter the experiment, we randomly assign them to either control group or treatment group (<em>randomized controlled trial (RCT)</em>). Now we have comparable groups. Then, we see results like that</p>
+
+<p><img src="/blog/figure/source/2017-02-24-randomization/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" /></p>
+
+<p>One of the coolest thing with RCTs is that we don’t need any representative sample from whole population. Let me explain why.</p>
+
+<p>Below you see a diagram which explains how patients are entered to an RCT.</p>
+
+<p><img src="/blog/figure/source/2017-02-24-randomization/RCT.png" alt="" /></p>
+
+<p>At the top you see population P. We want to know whether drug works in population P. But then, we have some patients who are eligible to trial (Sample A), lastly we have Sample B which includes the eligible patients who give their consent to enter the RCT (Treatment 1 is control group and Treatment 2 is treatment group).</p>
+
+<p>Let say, the outcome measured on each individual (for example blood pressure) is a random variable <script type="math/tex">X</script>. Say <script type="math/tex">E(X_{C}) = \mu</script> (if we do not give any drug to sample B) and <script type="math/tex">E(X_{T}) = \mu + a</script> where <script type="math/tex">a</script> is <em>true</em> treatment effect (if we give the drug to sample B). And let say, <script type="math/tex">\bar{X}_{C}</script> and <script type="math/tex">\bar{X}_{T}</script> are mean of control group and treatment group (after randomization).</p>
+
+<p>Then, <script type="math/tex">E(X_{C}) = E(\bar{X}_{C}) = \mu</script> and <script type="math/tex">E(X_{T}) = E(\bar{X}_{T}) = \mu + a</script>, since both control group and treatment groups are random sample from Sample B. Then, <script type="math/tex">E(\bar{X}_{T}) - E(\bar{X}_{C}) = a</script>. Statistically speaking we have an <em>unbiased</em> estimate of treatment effect <script type="math/tex">a</script>.
+As you see, we did not care that sample B (or A) is a random sample from population P. Even if <script type="math/tex">E(X_{C})</script> in population P is very different from <script type="math/tex">\mu</script>, our estimate of <script type="math/tex">a</script> is still unbiased.</p>
+
+<p>Another important feature of a RCT is that by design, possible confounding factors are controlled. This is the crucial difference between observational studies and RCTs. Because of these and some other important reasons, RCTs are generally considered as gold standard. But sometimes it is just not possible to conduct an RCT. For example, you wonder if there is an association between smoking and lung cancer. So what you need is that finding <script type="math/tex">N</script> people, and after randomization you need to force half of them to smoke, right? But of course this is completely unethical. So in similar scenarios, and also because RCTs are more costly than observation studies, we have to make use of observational studies.</p>
+
+<p>Lastly, there is another source of evidence which is regarded even more reliable than an RCT, and I will try to explain it in the next post.</p>
+
+<p>Note: I took the diagram and definitions from the book: “Introduction to Randomized
+Controlled Clinical Trials” (Second edition) written by John N. S. Matthews.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2017/02/05/probability-of-dying.html">
+            Plane crashes and household furniture
+            <small>05 Feb 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/12/08/life-expectancy.html">
+            A misunderstanding about life expectancy
+            <small>08 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2016/12/06/confounding.html">
+            Confounding or the relationship between shoe size and salary
+            <small>06 Dec 2016</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+<a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-share-button" data-href="https://gunhanb.github.io/blog//blog" data-layout="button_count"></div>
+
+
+
+
+<div id="disqus_thread"></div>
+
+<script>(function() {
+        var d = document, s = d.createElement('script');
+        s.src = '//https-gunhanb-github-io-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+    </div>
+
+    
+
+  </body>
+</html>

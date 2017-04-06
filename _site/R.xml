@@ -4,13 +4,22 @@
  <title>Burak's Data Blog</title>
  <link href="https://gunhanb.github.io/blog///blogR.xml" rel="self"/>
  <link href="https://gunhanb.github.io/blog///blog"/>
- <updated>2017-02-18T21:43:40+01:00</updated>
+ <updated>2017-04-06T17:32:45+02:00</updated>
  <id>https://gunhanb.github.io/blog/</id>
  <author>
    <name>Burak Kürsad Günhan</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>How I got here?</title>
+   <link href="https://gunhanb.github.io/blog//2016/10/26/how-I-got-here.html"/>
+   <updated>2016-10-26T00:00:00+02:00</updated>
+   <id>https://gunhanb.github.io/blog//2016/10/26/how-I-got-here</id>
+   <content type="html">&lt;p&gt;As someone with zero experience writing blogpost etc., &lt;a href=&quot;https://github.com/yihui/knitr-jekyll&quot;&gt;Yihui Xie’s minimal example&lt;/a&gt; and &lt;a href=&quot;http://statistics.rainandrhino.org/knitr-hyde/2015/12/12/sample-post.html&quot;&gt;this sample blog&lt;/a&gt; helped me a lot to start blogging. Normally, it can be quite tedious to work with a Jekyll-based blog for someone like me. However, Yihui’s servr R package facilitate how to build a &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; website which uses &lt;a href=&quot;yihui.name/knitr/&quot;&gt;knitr&lt;/a&gt; and Rmarkdown. By the way, I wanted to use Jekyll because I want to include R code to my blog posts. Also, I was lucky and I had experience with knitr and Rmarkdown before. Finally, with the help of Rstudio, the road for blogging with Jekyll is open for many more R users, I believe!&lt;/p&gt;
+</content>
+ </entry>
  
 
 </feed>
